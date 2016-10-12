@@ -1,0 +1,30 @@
+
+body {
+	
+	background-color: #ECFFBD;
+}
+
+
+
+
+p.txt {
+	font-family: 'Raleway', sans-serif !important;
+	font-weight: 500;
+	font-size: 15px;
+	margin-top:25px;
+	margin-left: -7px;
+}
+
+h1 {
+
+	color:#159148;
+
+}
+
+@media (min-width: 10px) and (max-width: 575px) { 
+
+	p {
+		font-size: 12px;
+	}
+
+}
