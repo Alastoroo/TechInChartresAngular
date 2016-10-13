@@ -1,5 +1,32 @@
+
+//
 (function() {
   var app = angular.module('TechInChartres', []);
+  //app.config(function($httpProvider) {
+  //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  //});
+  app.controller('mainController', ['$window', function($window) {
+    this.connect = function () {
+
+      // Requete vers api pour récupérer le code pour
+      $window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
+    }
+  }]);
+
+  // CSS IMPORT
+  app.directive('presentationCSS', function () {return {restrict: 'A',templateUrl: 'css/presentation.css'};})
+  app.directive('presentationCSS', function () {return {restrict: 'A',templateUrl: 'css/presentation.css'};})
+  // END CSS IMPORT
+
+  // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
+  app.directive("main", function () {
+    return {
+      restrict: 'EA',
+      templateUrl: 'js/main.js'
+    };
+  });
+  // END JS IMPORT
+
   app.directive('navbar', function() {
     return {
       restrict: 'E',

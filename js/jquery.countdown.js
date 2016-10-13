@@ -7,7 +7,7 @@ var defaultOptions = {
     return;
   },
   render: function (date) {
-	if(this.el.getAttribute('id') != "countDown_navbar") { 
+	if(this.el.getAttribute('id') != "countDown_navbar") {
 		this.el.innerHTML = "<table><tr>"+
 							"<td class='countDown_td'><span class='countDown_elem'>"+date.days+"</span><br/><span class='countDown_labels'>jours</span></td>"+
 							"<td class='countDown_separator'>|</td>"+
@@ -27,7 +27,7 @@ var defaultOptions = {
               "<td class='countDown_td'><span class='countDown_elem'>"+this.leadingZeros(date.min)+"</span><br/><span class='countDown_labels'>minutes</span></td>"+
               "<td class='countDown_separator'>|</td>"+
               "<td class='countDown_td'><span class='countDown_elem'>"+this.leadingZeros(date.sec)+"</span><br/><span class='countDown_labels'>secondes</span></td>"+
-              "</tr></table></div><div class='connexion'><a href=''><img src='img/connexion128_3.png' alt='' title=''/></a></div>"
+              "</tr></table></div><div class='connexion'><a href='#' ng-click='store.connect()'><img src='img/connexion128_3.png' alt='' title=''/></a></div>"
 	}
   }
 };
@@ -79,7 +79,7 @@ var Countdown = function(el, options) {
   }.bind(this);
 
   this.mergeOptions(options);
-  
+
 
   /**
    * Get the difference between now and the end date

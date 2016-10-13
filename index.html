@@ -8,13 +8,16 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.countdown.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 		<link rel="stylesheet" href="css/style.css" />
+		<style presentationCSS type="text/css"></style>
 	</head>
-	<body>
+	<body ng-controller="mainController as store">
+		<!--<script type="text/javascript" src="js/main.js"></script>-->
+		<script type="text/javascript" main></script>
 		<!--NAVBAR-->
 		<navbar></navbar>
 		<!--END NAVBAR-->
@@ -22,11 +25,7 @@
 		<!--COUNTDOWN (Photo + Timer)-->
 		<countdown></countdown>
 		<!--END COUNTDOWN -->
-
-		<!--PRESENTATION-->
-		<presentation></presentation>
-		<!--END PRESENTATION-->
-
+		<button ng-click="store.connect()"></button>
 		<!--PRESENTATION-->
 		<presentation></presentation>
 		<!--END PRESENTATION-->
@@ -52,7 +51,7 @@
 		<!--END GALLERYONEPAGE-->
 
 		<!--CONTACT -->
-		<gallery-one-page></gallery-one-page>
+		<contact></contact>
 		<!--END CONTACT-->
 	</body>
 </html>
