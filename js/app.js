@@ -21,5 +21,47 @@
         });
       }
     };
+  })
+  .directive('presentation', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/presentation.html'
+    };
+  })
+  .directive('news', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/news.html'
+    };
+  })
+  .directive('intervenant', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/intervenant.html'
+    };
+  })
+  .directive('stat', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/stat.html'
+    };
+  })
+  .directive('equipe', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/equipe.html'
+    };
+  })
+  .directive('galleryOnePage', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/GalleryOnePage.html'
+    };
+  })
+  .directive('contact', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/contact.html'
+    };
   });
 })();
