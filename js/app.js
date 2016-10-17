@@ -7,24 +7,28 @@
   //});
   app.controller('mainController', ['$window', function($window) {
     this.connect = function () {
-
+      console.log('aa');
+      //$cookie.put("token", "token");
       // Requete vers api pour récupérer le code pour
-      $window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
-    }
+      //$window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
+    };
+    this.essai = function () {
+      console.log('essai')
+    };
   }]);
 
   // CSS IMPORT
-  app.directive('presentationCSS', function () {return {restrict: 'A',templateUrl: 'css/presentation.css'};})
-  app.directive('presentationCSS', function () {return {restrict: 'A',templateUrl: 'css/presentation.css'};})
+  app.directive('presentationCss', function () {return {restrict: 'EA',templateUrl: 'css/presentation.css'};});
+  app.directive('newsCss', function () {return {restrict: 'EA',templateUrl: 'css/news.css'};});
+  app.directive('intervenantCss', function () {return {restrict: 'EA',templateUrl: 'css/intervenant.css'};});
+  app.directive('statCss', function () {return {restrict: 'EA',templateUrl: 'css/stat.css'};});
+  app.directive('equipeCss', function () {return {restrict: 'EA',templateUrl: 'css/equipe.css'};});
+  app.directive('galleryCss', function () {return {restrict: 'EA',templateUrl: 'css/gallery.css'};});
+  app.directive('contactCss', function () {return {restrict: 'EA',templateUrl: 'css/contact.css'};});
   // END CSS IMPORT
 
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
-  app.directive("main", function () {
-    return {
-      restrict: 'EA',
-      templateUrl: 'js/main.js'
-    };
-  });
+  app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT
 
   app.directive('navbar', function() {
