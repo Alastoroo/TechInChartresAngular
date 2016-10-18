@@ -2,7 +2,7 @@
 
 	/* DEBUT CSS GALLERIE POUR ONE PAGE */
 
-	.btn-top {
+	.btn-top-video {
         margin-top:70px;
         border-radius:1000px;
         background:#159148;
@@ -15,16 +15,14 @@
         padding:10px 15px;
         font-weight:500;
     }
-        .btn-top:hover {
+        .btn-top-video:hover {
             color:white;
             background:#159148;
             border:2px solid #159148;
            
         }
 
-body {
-    background-color: #ECFFBD;
-}
+
 
 .video{
     
@@ -35,9 +33,7 @@ body {
 /* FIN CSS GALLERIE POUR ONE PAGE */
 
 /* DEBUT CSS GALLERIE POUR PAGE GALLERIE */
-body {
-	background-color: #ECFFBD;
-}
+
 
 #video {
 	width:400px;
