@@ -7,7 +7,7 @@ body {
 	background-color: #fdfdfd;
 }
 
-img {
+img.equipe_image {
 
 
 	display: block;
@@ -18,7 +18,7 @@ img {
 }
 
 
-p{
+.equipe_texte{
 
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
@@ -36,7 +36,7 @@ p.equipe_name {
 	color:#159148;
 }
 
-h1 {
+ .equipe_titre {
 
 	color:#159148;
 	font-family: 'Raleway', sans-serif;
