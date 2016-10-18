@@ -36,8 +36,8 @@ $(window).on("scroll touchmove mousewheel", function(e){
 	if($('#countDown').is(':offscreen')) { // SI le compte a rebours et caché, ALORS :
 
 		//if(!$('#countDown_navbar').is(':animated')) {
-    		e.preventDefault();
-    		e.stopPropagation();
+    		//e.preventDefault();
+    		//e.stopPropagation();
     		$('#countDown_navbar').animate({
 				'right': '0px'
 			}, {duration: countDown_animation_duration, queue: false});
@@ -58,8 +58,8 @@ $(window).on("scroll touchmove mousewheel", function(e){
 		// du if (SI) en haut, on va cacher le compte a rebours de la navbar et remettre les boutons
 		// en place.
 		// if(!$('#countDown_navbar').is(':animated')) {
-			e.preventDefault();
-    		e.stopPropagation();
+			//e.preventDefault();
+    		//e.stopPropagation();
 			$('#countDown_navbar').animate({
 				'right': '-245px'
 			}, {duration: countDown_animation_duration, queue: false});
