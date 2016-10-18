@@ -1,14 +1,15 @@
 #stat{ 
 	background-color: white;
-	color: #21CE26;
+	color: #159148;
 }
 
-p{
+p.icones{
 font-family: 'Raleway', sans-serif !important;
 font-weight: 500;
 font-size: 15px;
 margin-top:25px;
 margin-left: -7px;
+color: black;
 }
 
 h1{

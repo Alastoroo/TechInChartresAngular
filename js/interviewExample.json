@@ -1,0 +1,20 @@
+{
+  "interviews": [
+    {
+      "title": "Jean Charles",
+      "date": 1476521713,
+      "hashTags": ["agriculture", "SEO", "Meteor"],
+      "picture": "/img/jeancharles.png",
+      "description": "Jean Charles, chef d'entreprise nous a accordé de son temps pour nous parler de son expérience.",
+      "content": "Le contenu de l'interview, questions et réponses."
+    },
+    {
+      "title": "Jacqueline",
+      "date": 1476575521,
+      "hashTags": ["femme", "Javascript"],
+      "picture": "/img/jeancharles.png",
+      "description": "Jacqueline nous a montré ses talents.",
+      "content": "Le contenu de l'interview, questions et réponses."
+    }
+  ]
+}
