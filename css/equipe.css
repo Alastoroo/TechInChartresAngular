@@ -4,7 +4,7 @@
 
 
 
-img {
+img.equipe_image {
 
 
 	display: block;
@@ -15,7 +15,11 @@ img {
 }
 
 
+<<<<<<< HEAD
 p.fonction{
+=======
+.equipe_texte{
+>>>>>>> cbb6527a400bb8aeb28c5fd82f5bda884fa4ce0b
 
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
@@ -33,7 +37,7 @@ p.equipe_name {
 	color:#159148;
 }
 
-h1 {
+ .equipe_titre {
 
 	color:#159148;
 	font-family: 'Raleway', sans-serif;
