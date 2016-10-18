@@ -1,3 +1,6 @@
+function redirectToMeetUp() {
+    window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
+}
 
 var countDown_animation_duration = 500;
 // Fonction jQuery qui sert à savoir QUAND un élement n'est plus visible dans la fenêtre.
@@ -15,6 +18,8 @@ jQuery.expr.filters.offscreen = function(el) {
   	// En faite, elle créée un nouveau filtre jQuery qui retourne true ou false si un élement
   	// est caché ou pas en fonction de ses coordonnées.
 };
+
+
 
 
 // Ici on vient choper l'EVENEMENT scroll de la fenêtre "WINDOW".
