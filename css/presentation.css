@@ -23,7 +23,7 @@ h1 {
 
 @media (min-width: 10px) and (max-width: 575px) { 
 
-	p {
+	p.txt {
 		font-size: 12px;
 	}
 
