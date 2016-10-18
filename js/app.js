@@ -5,17 +5,14 @@
   //app.config(function($httpProvider) {
   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //});
-  app.controller('mainController', ['$window', function($window) {
-    this.connect = function () {
-      console.log('aa');
-      //$cookie.put("token", "token");
-      // Requete vers api pour récupérer le code pour
-      //$window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
+  app.controller('mainController', function($scope, $location, $anchorScroll) {
+
+    $scope.scrollTo = function(id) {
+    $location.hash(id);
+      $anchorScroll();
     };
-    this.essai = function () {
-      console.log('essai')
-    };
-  }]);
+
+  });
 
   // CSS IMPORT
   app.directive('presentationCss', function () {return {restrict: 'EA',templateUrl: 'css/presentation.css'};});
@@ -25,6 +22,7 @@
   app.directive('equipeCss', function () {return {restrict: 'EA',templateUrl: 'css/equipe.css'};});
   app.directive('galleryCss', function () {return {restrict: 'EA',templateUrl: 'css/gallery.css'};});
   app.directive('contactCss', function () {return {restrict: 'EA',templateUrl: 'css/contact.css'};});
+  app.directive('footerCss', function () {return {restrict: 'EA',templateUrl: 'css/footer.css'};});
   // END CSS IMPORT
 
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
@@ -93,6 +91,12 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/pages/contact.html'
+    };
+  })
+  .directive('footer', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/footer.html'
     };
   });
 })();
