@@ -41,8 +41,12 @@ p.equipe_name {
 
 @media (min-width: 10px) and (max-width: 575px) { 
 
-	p {
+	p.fonction {
 		font-size: 12px;
 	}
+	p.equipe_name {
+		font-size: 12px;
+	}
+
 
 }
