@@ -13,6 +13,7 @@ h1 {
 	left:0px;
 	background:#ffffff;
 	z-index:10;
+	
 }
 	.navbar_container {
 		margin:0 auto;
@@ -110,7 +111,7 @@ h1 {
 	background-image:url('../img/fond.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
-	min-height:500px; /*A ENLEVER UNE FOIS LE CONTENU EN PLACE*/
+	min-height:610px; /*A ENLEVER UNE FOIS LE CONTENU EN PLACE*/
 	margin-top:70px;
 }
 	/*Compte a rebours central*/

@@ -14,8 +14,12 @@
     margin-top: 25px;
 
 }*/
+
 #intervenant{
     background-color: #ECFFBD;
+    border-width: 1px 0px;
+   border-style: solid;
+   color: green;
 }
 
 p.txt2{
