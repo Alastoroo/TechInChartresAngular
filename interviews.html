@@ -4,7 +4,7 @@
     <title>Tech In Chartres - Les interviews</title>
     <meta charset="UTF-8" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/app-interview.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/interviews.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style type="text/css">
@@ -32,8 +31,19 @@
     <navbar></navbar>
 
     <div class="container_fluid" id="searchBar">
-      <div class="container">
-        <input type="text" id="search_value" ng-model="search_value" />{{test}}
+      <div class="container searchContainerWhite">
+        <div class="row">
+          <div class="col-xs-3">
+            <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" />
+          </div>
+          <div class="col-xs-5">
+            <span class="searchSeparator"></span>
+            <span class="searchTitre">Rechercher dans</span>
+            <span class="searchCheckbox"><input type="checkbox" /> Contenu</span>
+            <input type="checkbox" /> Tags
+            <span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/>&nbsp;&nbsp;RECHERCHER</span>
+          </div>
+        </div>
       </div>
     </div>
 
