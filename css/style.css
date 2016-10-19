@@ -1,9 +1,27 @@
 body {
-
+ -webkit-font-smoothing: antialiase
 }
 h1 {
-	color:#159148 !important;
-	font-family: "Oswald", sans-serif !important;
+	color:#222 !important;
+	font-family: "Open Sans", sans-serif !important;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight:300;
+	text-align: center;
+}
+h2 {
+	font-size:24px;
+	font-family: "Open Sans", sans-serif !important;
+	text-align: center;
+	font-weight: 300;
+	color:#888;
+}
+hr {
+	width:100px;
+	height:1px;
+	background:#159148;
+	margin-top:35px;
+	border:0px solid transparent;
 }
 #navbar {
 	width:100%;
@@ -13,6 +31,7 @@ h1 {
 	left:0px;
 	background:#ffffff;
 	z-index:10;
+
 }
 	.navbar_container {
 		margin:0 auto;
@@ -110,7 +129,7 @@ h1 {
 	background-image:url('../img/fond.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
-	min-height:500px; /*A ENLEVER UNE FOIS LE CONTENU EN PLACE*/
+	min-height:610px; /*A ENLEVER UNE FOIS LE CONTENU EN PLACE*/
 	margin-top:70px;
 }
 	/*Compte a rebours central*/
@@ -157,7 +176,7 @@ h1 {
 		}
 	/*END Compte à rebours central*/
 	h1.titreConference {
-		font-family:"Roboto", sans-serif !important;
+		font-family:"Open Sans", sans-serif !important;
 		font-weight:300;
 		color:white !important;
 		font-size:40px;
