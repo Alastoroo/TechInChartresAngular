@@ -14,13 +14,41 @@
     margin-top: 25px;
 
 }*/
+.titre {
+    width: 100%;
+}
+
+h2.subTitle:after, h1.noSubtitle:after {
+    background-color: red;
+}
+h2.subTitle:after, h1.noSubtitle:after {
+    display: block;
+    height: 1px;
+    width: 100px;
+    content: '';
+    bottom: 53px;
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+}
 
 #intervenant{
-    background-color: #ECFFBD;
-    border-width: 1px 0px;
-   border-style: solid;
-   color: green;
+    
+   color: white;
 }
+
+#picture{
+    margin-right: 5px;
+    padding-left: 65px;
+
+}
+
+.card{
+    background-color: #3EB24F;
+    display: inline-block;
+}
+
+
 
 p.txt2{
 
