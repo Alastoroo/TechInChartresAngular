@@ -18,6 +18,7 @@
   app.directive('presentationCss', function () {return {restrict: 'EA',templateUrl: 'css/presentation.css'};});
   app.directive('newsCss', function () {return {restrict: 'EA',templateUrl: 'css/news.css'};});
   app.directive('intervenantCss', function () {return {restrict: 'EA',templateUrl: 'css/intervenant.css'};});
+  app.directive('imageCitationCss', function () {return {restrict: 'EA',templateUrl: 'css/imagecitation.css'};});
   app.directive('statCss', function () {return {restrict: 'EA',templateUrl: 'css/stat.css'};});
   app.directive('equipeCss', function () {return {restrict: 'EA',templateUrl: 'css/equipe.css'};});
   app.directive('galleryCss', function () {return {restrict: 'EA',templateUrl: 'css/gallery.css'};});
@@ -67,6 +68,12 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/pages/intervenant.html'
+    };
+  })
+  .directive('imageCitation', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/imagecitation.html'
     };
   })
   .directive('stat', function() {
