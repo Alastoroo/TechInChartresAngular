@@ -2,7 +2,7 @@ input[type=text]:focus {
   outline:none;
 }
 #searchBar {
-  background:#589442;
+  /*background:#589442;*/
   position: fixed;
   top:70px;
   left:0px;
@@ -20,7 +20,7 @@ input[type=text]:focus {
     padding-bottom: 20px;
   }
     #searchBar .whiteContainer {
-      background: white;
+      background: #589442;
       border-radius: 5px;
       height:120px;
       width:100%;
@@ -75,7 +75,7 @@ input[type=text]:focus {
 
 .interviewContainer {
   min-height:5000px;
-  margin-top:180px;
+  margin-top:350px;
 }
 .interview {
   width:100%;
