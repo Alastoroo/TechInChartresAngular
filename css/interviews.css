@@ -1,13 +1,32 @@
+input[type=text]:focus {
+  outline:none;
+}
 #searchBar {
   background:#589442;
   position: fixed;
   top:70px;
   left:0px;
   width:100%;
-  height:60px;
+  height:150px;
   padding-top: 7px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+
 }
+  #searchBar .titlePage {
+    font-size:30px;
+    color:white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    padding-top:20px;
+    padding-bottom: 20px;
+  }
+    #searchBar .whiteContainer {
+      background: white;
+      border-radius: 5px;
+      height:120px;
+      width:100%;
+      box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+    }
+/*
   .searchContainerWhite {
     background: white;
     box-shadow: 0px 3px 2px rgba(0,0,0,.3);
@@ -21,7 +40,7 @@
     font-size: 20px !important;
   }
   #searchBar input[type=text]:focus {
-    outline: none; /*Pour enlever la bordure sous chrome*/
+    outline: none; /*Pour enlever la bordure sous chrome
 
   }
   #searchBar .searchTitre {
@@ -36,6 +55,8 @@
   }
   #searchBar .searchCheckbox {
     font-size:18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
   }
   #searchBar #startSearchButton {
     padding: 12px;
@@ -50,6 +71,7 @@
       width:22px;
       height:22px;
     }
+    */
 
 .interviewContainer {
   min-height:5000px;
