@@ -23,11 +23,12 @@
 
 
 	<!-- GALERIE DEBUT -->
-<div ng-controller="appController as store ">
-	<div ng-repeat="vid in store.video" id="galerie" class="container-fluid">
-		{{vid.name}}
+
 		<h1>TECH IN CHARTRES VIDEO</h1>
 		<div class="row-fluid">
+			<div ng-controller="appController as store ">
+				<div ng-repeat="vid in store.video" id="galerie" class="container-fluid">
+					{{vid.name}}
 
 			<div id="video" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 				<iframe src="https://player.vimeo.com/video/149018045" width="360" height="190" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
