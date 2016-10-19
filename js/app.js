@@ -99,4 +99,5 @@
       templateUrl: 'templates/pages/footer.html'
     };
   });
+
 })();

@@ -8,6 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/app-interview.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
     <!--<script type="text/javascript" src="js/main.js"></script>-->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" />
@@ -22,7 +23,9 @@
 
 
 	<!-- GALERIE DEBUT -->
-	<div id="galerie" class="container-fluid">
+<div ng-controller="appController as store ">
+	<div ng-repeat="vid in store.video" id="galerie" class="container-fluid">
+		{{vid.name}}
 		<h1>TECH IN CHARTRES VIDEO</h1>
 		<div class="row-fluid">
 
