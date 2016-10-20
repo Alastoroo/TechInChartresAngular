@@ -40,7 +40,11 @@
   object-fit: cover;
 }
 
-
+.card-title {
+  font-family: "Open Sans", sans-serif;
+  font-size:22px;
+  font-weight: 500;
+}
 
 p.txt2{
 
