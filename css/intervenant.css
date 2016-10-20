@@ -14,17 +14,37 @@
     margin-top: 25px;
 
 }*/
+.titre {
+    width: 100%;
+}
+
 
 #intervenant{
-    background-color: #ECFFBD;
-    border-width: 1px 0px;
-   border-style: solid;
-   color: green;
+
+   color: white;
 }
+
+#picture{
+    margin-right: 5px;
+    padding-left: 65px;
+
+}
+
+.card{
+    background-color: #3EB24F;
+    display: inline-block;
+    max-width: 300px;
+}
+.card img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+
 
 p.txt2{
 
-    font-family: 'Raleway', sans-serif;   
+    font-family: 'Raleway', sans-serif;
     margin: 15px;
     font-size: 15px;
     color:#444444;
@@ -43,13 +63,8 @@ p.txt{
 
 }
 
-h1 {
 
-    font-family: 'Raleway', sans-serif;
-    color:#159148; 
-}
-
-@media (min-width: 10px) and (max-width: 575px) { 
+@media (min-width: 10px) and (max-width: 575px) {
 
     p.txt {
         font-size: 12px;
