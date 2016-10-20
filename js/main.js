@@ -12,7 +12,7 @@ jQuery.expr.filters.offscreen = function(el) {
   var rect = el.getBoundingClientRect();
   return (
            (rect.left + rect.width) < 0
-             || (rect.top + rect.height) < 0
+             || (rect.top + rect.height - 70) < 0
              || (rect.left > window.innerWidth || rect.top > window.innerHeight)
          );
   	// En faite, elle créée un nouveau filtre jQuery qui retourne true ou false si un élement

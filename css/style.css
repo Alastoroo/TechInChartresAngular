@@ -116,12 +116,12 @@ hr {
 					width:25px;
 					margin-top:21px;
 				}
-	#navbar > .navbar_container > img.logo {
+	#navbar > .navbar_container > a > img.logo {
 		margin-left:10px;
 		margin-top:5px;
 		width:60px;
 	}
-	#navbar > .navbar_container > img.logotext {
+	#navbar > .navbar_container > a > img.logotext {
 		margin-top:5px;
 		width:90px;
 	}
