@@ -20,17 +20,53 @@ jQuery.expr.filters.offscreen = function(el) {
 };
 
 
+$(document).ready(function() {
 
+});
 
 // Ici on vient choper l'EVENEMENT scroll de la fenêtre "WINDOW".
 // C'est à dire qu'a chaque ligne de pixels affichés en descendant ou montant
 // dans la fenêtre, le code qu'on met en dessous sera exécuté.
 $(window).on("scroll touchmove mousewheel", function(e){
+
+
+  if($('#topContent').is(':offscreen') && !$('#news').is(':offscreen')) {
+    $('a.topLinks').removeClass('activeLink');
+    $('a.topLinks[href=#news]').addClass('activeLink');
+  }
+  else if($('#news').is(':offscreen') && !$('#intervenant').is(':offscreen')) {
+    $('a.topLinks').removeClass('activeLink');
+    $('a.topLinks[href=#intervenant]').addClass('activeLink');
+  }
+  else if($('#intervenant').is(':offscreen') && !$('#equipe').is(':offscreen')) {
+    $('a.topLinks').removeClass('activeLink');
+    $('a.topLinks[href=#equipe]').addClass('activeLink');
+  }
+  else if($('#equipe').is(':offscreen') && !$('#videos').is(':offscreen')) {
+    $('a.topLinks').removeClass('activeLink');
+    $('a.topLinks[href=#videos]').addClass('activeLink');
+  }
+  else {
+    if(!$('#presentation').is(':offscreen') ||
+        !$('#contact').is(':offscreen') ||
+        !$('#footer').is(':offscreen')) {
+
+          $('a.topLinks').removeClass('activeLink');
+    }
+    else {
+      $('a.topLinks').removeClass('activeLink');
+      $('a.topLinks[href=#presentation]').addClass('activeLink');
+    }
+  }
+
+
+
 	// Si par exemple je mettais un "console.log('test');" ici, le mot "test" serait affiché plein
 	// de fois, a chaque scroll sur la page.
 
 	// Ici on a une condition, on regarde si le compte a rebours centrale est
 	// Caché, c'est à dire si on a scrollé et qu'il n'est plus visible.
+
 
 
 	if($('#countDown').is(':offscreen')) { // SI le compte a rebours et caché, ALORS :

@@ -61,6 +61,7 @@ hr {
 		        transition: background-color 300ms linear;
 		        */
 			}
+      #navbar_button_container a.topLinks.activeLink,
 			#navbar_button_container a.topLinks:hover {
 				background:#159148;
 				color:white;
