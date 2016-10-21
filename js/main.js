@@ -21,7 +21,9 @@ jQuery.expr.filters.offscreen = function(el) {
 
 
 $(document).ready(function() {
-
+  //$('.imageCitation').parallax("center", 0, 0.1, true);
+  
+  console.log('aa');
 });
 
 // Ici on vient choper l'EVENEMENT scroll de la fenêtre "WINDOW".

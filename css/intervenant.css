@@ -1,19 +1,5 @@
 @charset "UTF-8";
 
-/*img {
-
-
-    filter: grayscale(100%);
-    webkit-filter: grayscale(100%);
-    moz-filter: grayscale(100%);
-    ms-filter: grayscale(100%);
-    o-filter: grayscale(100%);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-
-}*/
 .titre {
     width: 100%;
 }
@@ -30,7 +16,7 @@
 
 .card{
     background-color: #3EB24F;
-    display: inline-block;
+    margin:0 auto;
     max-width: 300px;
 }
 .card img {
@@ -38,8 +24,20 @@
   object-fit: cover;
 }
 
-
-
+.card-title {
+  font-family: "Open Sans", sans-serif;
+  font-size:22px;
+  font-weight: 600;
+}
+p.card-text {
+    font-size: 13px;
+    text-align: left;
+    padding-top:3px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    font-family: "Open Sans", sans-serif;
+}
 p.txt2{
 
     font-family: 'Raleway', sans-serif;

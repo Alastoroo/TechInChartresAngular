@@ -63,13 +63,8 @@
   app.controller('mainController', function($scope, $location, anchorSmoothScroll) {
 
     $scope.gotoElement = function (eID){
-      // set the location.hash to the id of
-      // the element you wish to scroll to.
       $location.hash(eID);
-
-      // call $anchorScroll()
       anchorSmoothScroll.scrollTo(eID);
-
     };
   });
 
@@ -107,6 +102,22 @@
           $('#countDown, #countDown_navbar').countdown({
               date: "September 29, 2017 19:00:00"
           });
+
+          $('#topContent, #countDownDisplayTable').css('height', window.innerHeight-70+'px'); // Le 70 c'est pour le margin-top
+
+          var animateArrowDown = function() {
+            setInterval(function() {
+              $('#arrowDownAnimate').animate({
+                'bottom': '40px'
+              }, 1000, function() {
+                $('#arrowDownAnimate').animate({
+                  'bottom': '20px'
+                }, 1000);
+              });
+            }, 2000);
+          };
+          animateArrowDown();
+
         });
       }
     };
