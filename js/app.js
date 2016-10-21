@@ -104,6 +104,20 @@
           });
 
           $('#topContent, #countDownDisplayTable').css('height', window.innerHeight-70+'px'); // Le 70 c'est pour le margin-top
+
+          var animateArrowDown = function() {
+            setInterval(function() {
+              $('#arrowDownAnimate').animate({
+                'bottom': '40px'
+              }, 1000, function() {
+                $('#arrowDownAnimate').animate({
+                  'bottom': '20px'
+                }, 1000);
+              });
+            }, 2000);
+          };
+          animateArrowDown();
+
         });
       }
     };
