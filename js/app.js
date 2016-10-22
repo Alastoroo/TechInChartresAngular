@@ -167,7 +167,12 @@
   .directive('contact', function() {
     return {
       restrict: 'E',
-      templateUrl: 'templates/pages/contact.html'
+      templateUrl: 'templates/pages/contact.html',
+      link: function (scope, element, attrs) {
+        angular.getTestability(element).whenStable(function() {
+          
+        });
+      }
     };
   })
   .directive('footer', function() {

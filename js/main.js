@@ -1,3 +1,25 @@
+
+function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.448217, lng: 1.486741},
+          scrollwheel: false,
+          zoom: 17,
+          styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
+
+        });
+        var marker = new google.maps.Marker({
+          position: {lat: 48.448217, lng: 1.486741},
+          map: map,
+          title: 'Hello World!'
+        });
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        map.addListener('center_changed', function() {
+          map.panTo(marker.getPosition());
+        });
+        map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
+      }
+
 function redirectToMeetUp() {
     window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
 }
@@ -22,7 +44,7 @@ jQuery.expr.filters.offscreen = function(el) {
 
 $(document).ready(function() {
   //$('.imageCitation').parallax("center", 0, 0.1, true);
-  
+
   console.log('aa');
 });
 
