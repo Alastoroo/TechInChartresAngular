@@ -125,3 +125,7 @@ $(window).on("scroll touchmove mousewheel", function(e){
 		// }
 	}
 });
+
+$(window).resize(function() {
+  $('#arrowDownAnimate').css('left', window.innerWidth/2-(parseFloat($('#arrowDownAnimate').css('width'))/2)+'px')
+});

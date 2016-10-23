@@ -291,6 +291,6 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   display:inline-block;
   position:absolute;
   bottom:20px;
-  left:50%;
-  width:40px;
+  width:35px;
+  border:0px;
 }

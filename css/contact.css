@@ -1,5 +1,9 @@
 
 #contact_bloc {
 	background: red;
-	position: relative;
+	position: absolute;
+	width: 100px;
+	height:100px;
+	background: red;
+	z-index: 99999999;
 }

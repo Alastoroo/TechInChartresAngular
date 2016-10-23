@@ -12,13 +12,6 @@ p.txt3 {
 	margin-top:25px;
 	color:#555;
 }
-
-.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
 @media (min-width: 10px) and (max-width: 575px) {
 
 	p.txt3 {

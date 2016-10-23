@@ -118,6 +118,9 @@
             }, 2000);
           };
           animateArrowDown();
+          // Ici on positionne la fleche exactement au centre
+          $('#arrowDownAnimate').css('left', window.innerWidth/2-(parseFloat($('#arrowDownAnimate').css('width'))/2)+'px');
+
 
         });
       }

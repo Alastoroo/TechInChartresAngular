@@ -24,10 +24,14 @@
   object-fit: cover;
 }
 
-.card-title {
+h4.card-title {
   font-family: "Open Sans", sans-serif;
   font-size:22px;
   font-weight: 600;
+  padding-top:3px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-bottom: 0px;
 }
 p.card-text {
     font-size: 13px;
