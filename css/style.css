@@ -273,3 +273,24 @@ hr {
 			color:white;
 		}
 	/*END Compte à rebours navbar*/
+
+/*GOOGLE MAPS*/
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+/*GOOGLE MAPS END*/
+
+#arrowDownAnimate {
+  display:inline-block;
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  width:40px;
+}

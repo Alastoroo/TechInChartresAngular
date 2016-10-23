@@ -66,18 +66,19 @@
       $location.hash(eID);
       anchorSmoothScroll.scrollTo(eID);
     };
+
   });
 
   // CSS IMPORT
-  app.directive('presentationCss', function () {return {restrict: 'EA',templateUrl: 'css/presentation.css'};});
-  app.directive('newsCss', function () {return {restrict: 'EA',templateUrl: 'css/news.css'};});
-  app.directive('intervenantCss', function () {return {restrict: 'EA',templateUrl: 'css/intervenant.css'};});
-  app.directive('imageCitationCss', function () {return {restrict: 'EA',templateUrl: 'css/imagecitation.css'};});
-  app.directive('statCss', function () {return {restrict: 'EA',templateUrl: 'css/stat.css'};});
-  app.directive('equipeCss', function () {return {restrict: 'EA',templateUrl: 'css/equipe.css'};});
-  app.directive('galleryCss', function () {return {restrict: 'EA',templateUrl: 'css/gallery.css'};});
-  app.directive('contactCss', function () {return {restrict: 'EA',templateUrl: 'css/contact.css'};});
-  app.directive('footerCss', function () {return {restrict: 'EA',templateUrl: 'css/footer.css'};});
+  app.directive('presentationCss', function () {        return {restrict: 'EA',templateUrl: 'css/presentation.css'};});
+  app.directive('newsCss', function () {                return {restrict: 'EA',templateUrl: 'css/news.css'};});
+  app.directive('intervenantCss', function () {         return {restrict: 'EA',templateUrl: 'css/intervenant.css'};});
+  app.directive('imageCitationCss', function () {       return {restrict: 'EA',templateUrl: 'css/imagecitation.css'};});
+  app.directive('statCss', function () {                return {restrict: 'EA',templateUrl: 'css/stat.css'};});
+  app.directive('equipeCss', function () {              return {restrict: 'EA',templateUrl: 'css/equipe.css'};});
+  app.directive('galleryCss', function () {             return {restrict: 'EA',templateUrl: 'css/gallery.css'};});
+  app.directive('contactCss', function () {             return {restrict: 'EA',templateUrl: 'css/contact.css'};});
+  app.directive('footerCss', function () {              return {restrict: 'EA',templateUrl: 'css/footer.css'};});
   // END CSS IMPORT
 
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
@@ -170,7 +171,7 @@
       templateUrl: 'templates/pages/contact.html',
       link: function (scope, element, attrs) {
         angular.getTestability(element).whenStable(function() {
-          
+
         });
       }
     };

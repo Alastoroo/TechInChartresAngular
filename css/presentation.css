@@ -1,14 +1,17 @@
 
 
 
-
+#presentation_container {
+	background:#fafafa;
+	margin-bottom:100px;
+}
 
 p.txt3 {
 	font-family: 'Raleway', sans-serif !important;
 	font-weight: 500;
 	font-size: 16px;
 	margin-top:25px;
-	color:#777;
+	color:#555;
 }
 
 
