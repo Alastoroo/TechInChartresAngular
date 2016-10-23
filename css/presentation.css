@@ -3,7 +3,6 @@
 
 #presentation_container {
 	background:#fafafa;
-	margin-bottom:100px;
 }
 
 p.txt3 {
@@ -14,7 +13,11 @@ p.txt3 {
 	color:#555;
 }
 
-
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 
 @media (min-width: 10px) and (max-width: 575px) {
 
