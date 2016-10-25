@@ -1,5 +1,9 @@
-// Tableau video pour gallery page 2 DEBUT
 
+function redirectToMeetUp() {
+    window.location.href = "https://secure.meetup.com/oauth2/authorize?client_id=ejmd7jeh2q0f6no4iutmhijrui&response_type=code&redirect_uri=http://rxdesign.io";
+}
+
+// Tableau video pour gallery page 2 DEBUT
 (function() {
   var objectVideo = [
     {
@@ -76,6 +80,29 @@
       return $sce.trustAsResourceUrl(src);
     }
   });
-
+  app.directive('navbar', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/navbar.html',
+      link: function (scope, element, attrs) {
+        angular.getTestability(element).whenStable(function() {
+          // Ici on passe deux DIV avec l'ID "countDown" et l'ID "countDown_navbar" a la fonction "countdown"
+        	// Ici on utilise un Plugin jQuery, le plugin "countdown".
+        	// On défini la date du compte à rebours dans la fonction countdown (La date viendra de l'API Meetup)
+          $('#countDown_navbar').countdown({
+              date: "September 29, 2017 19:00:00"
+          });
+        });
+      }
+    };
+  });
+  // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
+  app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
+  // END JS IMPORT
+  app.directive("footer", function (){
+    return {
+      restrict: 'EA', templateUrl: "templates/pages/footer.html"
+    };
+  });
 
 })();
