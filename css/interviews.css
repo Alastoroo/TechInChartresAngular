@@ -1,6 +1,7 @@
 input[type=text]:focus {
   outline:none;
 }
+
 #searchContainer {
   padding:15px;
   background: #159148;
@@ -21,6 +22,9 @@ input[type=text]:focus {
 .interviewContainer {
   border:2px solid #159148;
 }
+  .interviewContainer h1 {
+    text-align: inherit !important;
+  }
 #searchContainer input[type=text] {
   border:0px !important;
   padding:8px 10px;
@@ -28,3 +32,14 @@ input[type=text]:focus {
   border:0px solid transparent !important;
   font-size: 20px !important;
 }
+.hideBloc {
+  display:none;
+}
+.noresult {
+  min-height: 350px;
+  padding-left:20px;
+  padding-right:20px;
+}
+  .noresult h1 {
+    padding-top: 100px;
+  }

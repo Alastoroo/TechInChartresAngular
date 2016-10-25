@@ -35,8 +35,8 @@
         <center>
           <h1>Les interviews</h1>
           <hr/>
-          <h2>Texte ICI</h2>
-          <br/>
+          <h2>Retrouvez ici les interviews des intervenants de TechInChartres</h2>
+          <br/><br/>
         </center>
       </div>
     </div>
@@ -55,7 +55,16 @@
             <h1>{{interview.title}} - {{$index}}</h1>
           </div>
         </div>
-        <span ng-show="!interview.length">caca mou</span>
+
+        <!--Bloc Aucun résultat-->
+        <div class="noresult hideBloc">
+          <center>
+            <h1>Aucun résultat</h1>
+            <h2>Si vous effectuez une recherche par mots-clés, vérifiez bien qu'il n'y a pas de faute de frappe. Essayez d'élargir votre recherche. </h2>
+          </center>
+        </div>
+
+
       </div>
     </div>
 
