@@ -20,13 +20,13 @@
             color:white;
             background:#159148;
             border:2px solid #159148;
-           
+
         }
 
 
 
 .video{
-    
+
     text-align: center;
 
 }
@@ -43,4 +43,7 @@
 
 }
 
+#galerie {
+	margin-top: 100px;
+}
 /* FIN CSS GALLERIE POUR PAGE GALLERIE */
