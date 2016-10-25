@@ -1,5 +1,5 @@
 .imageCitation {
-  background-image:url('img/meeting.jpg');
+  background-image:url('img/techno.jpg');
   background-size:cover;
   background-position: fixed;
   height:300px;
@@ -10,7 +10,7 @@
   .imageCitation .citation {
     text-align: center;
     text-transform: uppercase;
-    color:#111;/*07522b*/
+    color: white;/*07522b*/
     font-size:50px;
     padding-top: 100px;
     font-family: "Open Sans", sans-serif;
