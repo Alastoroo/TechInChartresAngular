@@ -85,6 +85,12 @@
   app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT
 
+  app.controller('formController',function(){
+    this.contact=function(){
+      alert('');
+    };
+  });
+
   app.directive('navbar', function() {
     return {
       restrict: 'E',

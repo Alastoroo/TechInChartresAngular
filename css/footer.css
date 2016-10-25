@@ -5,7 +5,7 @@
 .footer_wcs{
 	width: 50px;
 	margin:20px;
-
+	
 }
 
 .footer_twitter{
@@ -21,22 +21,21 @@
 }
 
 #copyright{
-
-	margin:20px;
+	margin:34px;
 }
 
 
 .btn-footer {
-			margin-top:35px;
-			margin-bottom: 35px;
-			border-radius:1000px;
-			background:#159148;
-			border:2px solid #159148;
-			color:white;
-			letter-spacing:2px;
-			text-transform:uppercase;
-			font-size:12px;
-			font-family:"Roboto", sans-serif;
-			padding:10px 15px;
-			font-weight:500;
-	}
+	margin-top:35px;
+	margin-bottom: 35px;
+	border-radius:1000px;
+	background:#159148;
+	border:2px solid #159148;
+	color:white;
+	letter-spacing:2px;
+	text-transform:uppercase;
+	font-size:12px;
+	font-family:"Roboto", sans-serif;
+	padding:10px 15px;
+	font-weight:500;
+}
