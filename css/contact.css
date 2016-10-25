@@ -1,6 +1,6 @@
 .ng-invalid.ng-dirty {
 
-		border-color: red;
+	border-color: red;
 }
 
 .ng-valid.ng-dirty {
@@ -15,4 +15,27 @@
 .police {
 
 	font-family: "Open Sans";
+}
+
+
+.btn1-top {
+
+	margin-top:10px !important; 
+	border-radius:1000px !important; 
+	background:#159148 !important; 
+	border:2px solid #159148 !important; 
+	color:white !important; 
+	letter-spacing:2px !important; 
+	text-transform:uppercase !important; 
+	font-size:12px !important; 
+	font-family:"Roboto", sans-serif !important; 
+	padding:10px 15px !important; 
+	font-weight:500 !important; 
+} 
+
+.btn1-top:hover { 
+
+	color:white !important; 
+	background:#159148 !important; 
+	border:2px solid #159148 !important; 
 }
