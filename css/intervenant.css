@@ -75,3 +75,18 @@ p.txt{
 
 
 }
+
+/* Button debut */
+.btn-default-interviews {
+  margin-top:70px !important;
+  border-radius:1000px !important;
+  background:#159148 !important;
+  border:2px solid #159148 !important;
+  color:white !important;
+  letter-spacing:2px !important;
+  text-transform:uppercase !important;
+  font-size:12px !important;
+  font-family:"Roboto", sans-serif !important;
+  padding:10px 15px !important;
+  font-weight:500 !important;
+}
