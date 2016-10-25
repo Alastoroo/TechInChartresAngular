@@ -1,17 +1,9 @@
-#contact {/*bloc contact*/
-	background-color: #ECFFBD;
-	color: black;
-}
 
-p.adresse{
-font-family: 'Raleway', sans-serif !important;
-font-weight: 500;
-font-size: 15px;
-margin-top:25px;
-margin-left: -7px;
-}
-
-h1{
-	color:#159148;
-	font-family: 'Raleway', sans sans-serif;
+#contact_bloc {
+	background: red;
+	position: absolute;
+	width: 100px;
+	height:100px;
+	background: red;
+	z-index: 99999999;
 }

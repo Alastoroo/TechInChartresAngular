@@ -1,9 +1,27 @@
 body {
-
+ -webkit-font-smoothing: antialiase
 }
 h1 {
-	color:#159148 !important;
-	font-family: "Oswald", sans-serif !important;
+	color:#222 !important;
+	font-family: "Open Sans", sans-serif !important;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight:300;
+	text-align: center;
+}
+h2 {
+	font-size:24px;
+	font-family: "Open Sans", sans-serif !important;
+	text-align: center;
+	font-weight: 300;
+	color:#888;
+}
+hr {
+	width:100px;
+	height:1px;
+	background:#159148;
+	margin-top:35px;
+	border:0px solid transparent;
 }
 #navbar {
 	width:100%;
@@ -13,6 +31,7 @@ h1 {
 	left:0px;
 	background:#ffffff;
 	z-index:10;
+
 }
 	.navbar_container {
 		margin:0 auto;
@@ -42,6 +61,7 @@ h1 {
 		        transition: background-color 300ms linear;
 		        */
 			}
+      #navbar_button_container a.topLinks.activeLink,
 			#navbar_button_container a.topLinks:hover {
 				background:#159148;
 				color:white;
@@ -96,12 +116,12 @@ h1 {
 					width:25px;
 					margin-top:21px;
 				}
-	#navbar > .navbar_container > img.logo {
+	#navbar > .navbar_container > a > img.logo {
 		margin-left:10px;
 		margin-top:5px;
 		width:60px;
 	}
-	#navbar > .navbar_container > img.logotext {
+	#navbar > .navbar_container > a > img.logotext {
 		margin-top:5px;
 		width:90px;
 	}
@@ -110,7 +130,6 @@ h1 {
 	background-image:url('../img/fond.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
-	min-height:500px; /*A ENLEVER UNE FOIS LE CONTENU EN PLACE*/
 	margin-top:70px;
 }
 	/*Compte a rebours central*/
@@ -157,7 +176,7 @@ h1 {
 		}
 	/*END Compte à rebours central*/
 	h1.titreConference {
-		font-family:"Roboto", sans-serif !important;
+		font-family:"Open Sans", sans-serif !important;
 		font-weight:300;
 		color:white !important;
 		font-size:40px;
@@ -254,3 +273,24 @@ h1 {
 			color:white;
 		}
 	/*END Compte à rebours navbar*/
+
+/*GOOGLE MAPS*/
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+/*GOOGLE MAPS END*/
+
+#arrowDownAnimate {
+  display:inline-block;
+  position:absolute;
+  bottom:20px;
+  width:35px;
+  border:0px;
+}

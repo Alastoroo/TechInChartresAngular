@@ -1,28 +1,18 @@
 
 
 
-
+#presentation_container {
+	background:#fafafa;
+}
 
 p.txt3 {
 	font-family: 'Raleway', sans-serif !important;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 16px;
 	margin-top:25px;
-	margin-left: -7px;
-	color:#444444;
+	color:#555;
 }
-
-h1 {
-
-	color:#159148;
-
-}
-
-
-
-
-
-@media (min-width: 10px) and (max-width: 575px) { 
+@media (min-width: 10px) and (max-width: 575px) {
 
 	p.txt3 {
 		font-size: 12px;
