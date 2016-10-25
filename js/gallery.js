@@ -73,6 +73,8 @@ function redirectToMeetUp() {
   }
   ];
   var app = angular.module('TechInChartres', []);
+  
+  app.directive('footerCss', function () {              return {restrict: 'EA',templateUrl: 'css/footer.css'};});
 
   app.controller('mainController', function($sce){
     this.video = objectVideo;
