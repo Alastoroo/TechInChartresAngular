@@ -1,10 +1,11 @@
 .row-footer{
 	height: 100px;
-	text-align: center;
 }
 
-.logo-footer img{
-	width: 35px;
+.footer_wcs{
+	width: 50px;
+	margin:20px;
+
 }
 
 
