@@ -1,9 +1,7 @@
 .row-footer{
 	height: 100px;
-	text-align: center;
 }
-
-.logo-footer img{
-
+.footer_wcs{
 	width: 50px;
+	margin:20px;
 }
