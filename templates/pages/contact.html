@@ -1,3 +1,59 @@
+<div class="container">
+		<div class="marge row" >
+			<div class="col-md-8">
+				<div class="well well-sm">
+					<form name="formulaire" ng-controller="formController as store" ng-submit="formulaire.$valid && store.contact()" >
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="police" for="name">
+										Nom</label>
+										<input type="text" class="form-control" id="name" placeholder="votre nom" ng-model="name" required/>
+									</div>
+									<div class="form-group">
+										<label  class="police" for="email">
+											Adresse e-mail</label>
+											<div class="input-group">
+												<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+											</span>
+											<input type="email" class="form-control" id="email" placeholder="votre email" ng-model="email" required /></div>
+										</div>
+										<div class="form-group">
+											<label class="police" for="subject">
+												Sujet</label>
+											<input type="text" class="form-control" id="sujet" placeholder="sujet" ng-model="sujet" required/>
+
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="police" for="name">
+													Message</label>
+													<textarea name="message" id="message" class="form-control" rows="9" cols="25" ng-model="message"required
+													placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<input type="submit" style="background-color:#159148;" value="envoyer"/>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="police col-md-4">
+
+								<legend> Où se passe les meet-up</legend>
+								<address>
+									<strong>Tech in Chartres</strong><br>
+									Eurélium<br>
+									11 rue du Cardinal Pie, Chartres<br>
+
+								</address>
 
 
-	<!--fin bloc contact -->
+							</div>
+						</div>
+					</div>
+
+
+

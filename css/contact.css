@@ -1,9 +1,18 @@
+.ng-invalid.ng-dirty {
 
-#contact_bloc {
-	background: red;
-	position: absolute;
-	width: 100px;
-	height:100px;
-	background: red;
-	z-index: 99999999;
+		border-color: red;
+}
+
+.ng-valid.ng-dirty {
+
+	border-color: green;
+}
+
+.marge {
+	margin-top: 50px;
+}
+
+.police {
+
+	font-family: "Open Sans";
 }
