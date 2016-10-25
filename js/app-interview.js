@@ -3,6 +3,7 @@
 
   app.controller('mainController', function($scope, $http) {
     $scope.data = undefined;
+    $scope.aucunResultat = false;
 
     // Moteur de recherche qui prend la valeur du champ de
     // recherche et qui affiche les interviews correspondants
@@ -62,3 +63,9 @@
   });
 
 })();
+
+$(document).ready(function() {
+  $('#search_value').on('input', function() {
+    console.log('hey');
+  });
+});
