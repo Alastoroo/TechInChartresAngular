@@ -5,7 +5,23 @@
   //app.config(function($httpProvider) {
   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //});
+  app.controller('SlideController', function(){
+    this.news = objectNews;
+  })
+  var objectNews = [
+  {
+  name : "TechInChartres News 1",
+  text : "caca pipi popo"
 
+  },
+
+  {
+  name : "TechInChartres News 2",
+  text : "caca pipi popo 2"
+
+
+  }
+  ];
   app.service('anchorSmoothScroll', function(){
 
       this.scrollTo = function(eID) {
