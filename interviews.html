@@ -3,15 +3,15 @@
   <head>
     <title>Tech In Chartres - Les interviews</title>
     <meta charset="UTF-8" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/app-interview.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <!--<script type="text/javascript" src="js/main.js"></script>-->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/interviews.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style type="text/css">
@@ -29,43 +29,44 @@
   <body ng-controller="mainController as store">
 
     <navbar></navbar>
-<!--
-    <div class="container_fluid" id="searchBar">
-      <div class="container searchContainerWhite">
-        <div class="row">
-          <div class="col-xs-3">
-            <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" />
-          </div>
-          <div class="col-xs-5">
-            <span class="searchSeparator"></span>
-            <span class="searchTitre">Rechercher dans</span>
-            <span class="searchCheckbox"><input type="checkbox" /> Contenu</span>
-            <span class="searchCheckbox"><input type="checkbox" /> Tags</span>
-            <span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/>&nbsp;&nbsp;RECHERCHER</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
-    <div class="container_fluid" id="searchBar">
-      <div class="container">
-        <center class="titlePage">Les interviews</center>
-        <div class="whiteContainer">
-          <div class="row">a</div>
-        </div>
-      </div>
-    </div>
-<!--
-    <div class="container_fluid">
 
-      <div class="container interviewContainer" >
+    <div class="container-fluid" style="margin-top:100px;">
+      <div class="container">
+        <center>
+          <h1>Les interviews</h1>
+          <hr/>
+          <h2>Retrouvez ici les interviews des intervenants de TechInChartres</h2>
+          <br/><br/>
+        </center>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container"id="searchContainer">
+        <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" /><span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/>&nbsp;&nbsp;RECHERCHER</span>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container interviewContainer">
+
         <div class="interview" ng-show="searchEngine($index)" ng-repeat="interview in data.interviews">
           <div class="paddingInterview">
             <h1>{{interview.title}} - {{$index}}</h1>
-          </div
+          </div>
         </div>
+
+        <!--Bloc Aucun résultat-->
+        <div class="noresult hideBloc">
+          <center>
+            <h1>Aucun résultat</h1>
+            <h2>Si vous effectuez une recherche par mots-clés, vérifiez bien qu'il n'y a pas de faute de frappe. Essayez d'élargir votre recherche. </h2>
+          </center>
+        </div>
+
+
       </div>
     </div>
--->
+
   </body>
 </html>

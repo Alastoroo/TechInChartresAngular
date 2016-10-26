@@ -1,8 +1,11 @@
 (function() {
+  var countInterview = undefined;
+
   var app = angular.module('TechInChartres', []);
 
   app.controller('mainController', function($scope, $http) {
     $scope.data = undefined;
+    $scope.aucunResultat = false;
 
     // Moteur de recherche qui prend la valeur du champ de
     // recherche et qui affiche les interviews correspondants
@@ -13,20 +16,13 @@
 
       if(searchValue.length > 0) {
         var pattern = new RegExp(searchValue, "gi");
-        if(pattern.test(interviewName)) {
-          console.log('affiche')
+        if(pattern.test(interviewName))
           return true;
-        }
-        else {
-          console.log('cache')
+        else
           return false;
-        }
-
       }
-      else {
-        console.log('affiche tout');
+      else
         return true;
-      }
 
     };
     /*
@@ -43,7 +39,7 @@
     */
     $http.get('js/interviewExample.json').success(function (data) {
       $scope.data = data;
-      //console.log(data);
+      countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
     })
   });
 
@@ -59,6 +55,18 @@
         });
       }
     };
+  });
+
+  $(document).ready(function() {
+    $('#search_value').on('input', function() {
+      // Ici on regarde si le nombre de bloc caché (bloc qui ne correspondent pas a la recherche)
+      // est le même que le nombre total de bloc. SI oui, alors c'est qu'on a aucun résultat
+      // Donc on montre le bloc qui le dit
+      if(countInterview === $('.interviewContainer > div.ng-hide').length)
+        $('.noresult').removeClass('hideBloc');
+      else
+        $('.noresult').addClass('hideBloc');
+    });
   });
 
 })();
