@@ -1,31 +1,4 @@
-<!--
-	<div class="container-fluid" id="news"><bloc NEWS
-		<div class="row">
-			<div class="col-md-4 col-md-offset-1 text-center">
-
-
-				<h1>Tech In Chartres #11</h1><!meetup a venir
-
-				<p align="justify" class="descriptif">Les Tech in Chartres c'est tout les derniers jeudi du mois !
-
-					Comme d'habitude venez nombreux et parlez en autour de vous. C'est VOTRE meet-up et c'est vous qui pouvez faire vivre "Tech in Chartres" ! </p>
-
-				</div>
-
-				<div class="col-md-4 col-md-offset-2 text-center"><h1>Tech In Chartres #12</h1><meetup a venir
-
-					<p align="justify" class="descriptif">Les Tech in Chartres c'est tout les derniers jeudi du mois !
-
-						Comme d'habitude venez nombreux et parlez en autour de vous. C'est VOTRE meet-up et c'est vous qui pouvez faire vivre "Tech in Chartres" ! </p>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
--->
-
-		<div class="container" ng-controller="SlideController as newsStore">
+<div class="container" ng-controller="SlideController as newsStore">
 		<div class="col-xs-12">
 		<div id="hero-wrapper">
 		    <div class="carousel-wrapper">
@@ -37,6 +10,7 @@
 		        <div class="carousel-inner" >
 		          <div class="item" style="width: 100%; height: 300px; background: red;" ng-repeat="tab in newsStore.news" ng-class='{active:$first}'>
 		            <h1>{{tab.name}}</h1>
+		            <h4>{{tab.titre}}</h4>
 								<p>{{tab.text}}</p>
 
 		          </div>

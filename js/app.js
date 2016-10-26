@@ -10,14 +10,16 @@
   })
   var objectNews = [
   {
-  name : "TechInChartres News 1",
-  text : "caca pipi popo"
+  name : "Tech In Chartres #11",
+  titre : "Spécial MAKERS",
+  text : "Pour tous les curieux, passionnés, pro et amateurs de l'univers des Makers... ce meet-up tombe à point !Nous vous précisons très vite le programme.Nous pouvons déjà vous annoncer que BetaMachine, le Hackerspace de Chartres, sera parmi nos speakers :)"
 
   },
 
   {
-  name : "TechInChartres News 2",
-  text : "caca pipi popo 2"
+  name : "Tech In Chartres #12",
+  titre : "TechInChartres",
+  text : "Les Tech in Chartres c'est tout les derniers jeudi du mois !Comme d'habitude venez nombreux et parlez en autour de vous. C'est VOTRE meet-up et c'est vous qui pouvez faire vivre Tech in Chartres ! "
 
 
   }
