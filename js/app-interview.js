@@ -40,8 +40,10 @@
     $http.get('js/interviewExample.json').success(function (data) {
       $scope.data = data;
       countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
-    })
+    });
   });
+
+  app.directive('footerCss', function () {return {restrict: 'EA',templateUrl: 'css/footer.css'};});
 
   app.directive('navbar', function () {
     return {
@@ -57,16 +59,33 @@
     };
   });
 
+  app.directive('footer', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/pages/footer.html'
+    }
+  });
+
   $(document).ready(function() {
     $('#search_value').on('input', function() {
       // Ici on regarde si le nombre de bloc caché (bloc qui ne correspondent pas a la recherche)
       // est le même que le nombre total de bloc. SI oui, alors c'est qu'on a aucun résultat
       // Donc on montre le bloc qui le dit
-      if(countInterview === $('.interviewContainer > div.ng-hide').length)
+      if(countInterview === $('div.ng-hide').length) {
         $('.noresult').removeClass('hideBloc');
-      else
+        console.log('????')
+      }
+      else {
         $('.noresult').addClass('hideBloc');
+        console.log('??')
+      }
     });
+
+    $('.arrows').click(function() {
+      console.log('aa');
+    });
+    console.log($('.arrows').length);
+
   });
 
 })();

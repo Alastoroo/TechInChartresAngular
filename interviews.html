@@ -25,6 +25,7 @@
       margin-right:245px;
     }
     </style>
+    <style footer-Css type="text/css"></style>
   </head>
   <body ng-controller="mainController as store">
 
@@ -50,12 +51,30 @@
     <div class="container-fluid">
       <div class="container interviewContainer">
 
-        <div class="interview" ng-show="searchEngine($index)" ng-repeat="interview in data.interviews">
-          <div class="paddingInterview">
-            <h1>{{interview.title}} - {{$index}}</h1>
-          </div>
-        </div>
+        <div class="interview closeBloc" ng-show="searchEngine($index)" ng-repeat="interview in data.interviews">
 
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 col-sm-2" style="padding:14px;">
+                <center><img src="{{interview.picture}}" alt="" title="{{interview.title}}" class="avatar"/></center>
+              </div>
+              <div class="col-xs-12 col-sm-10" style="padding-left:30px;">
+                <table style="border-collapse:collapse;width:100%;">
+                  <tr>
+                    <td>
+                      <h1>{{interview.title}}</h1>
+                    </td>
+                    <td style="text-align:right;">
+                        <img src="img/arrow-up-green.png" alt="" class="arrows arrowActive"/>
+                    </td>
+                  </tr>
+                </table>
+                <p class="interview_desc">{{interview.description}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
         <!--Bloc Aucun résultat-->
         <div class="noresult hideBloc">
           <center>
@@ -64,9 +83,10 @@
           </center>
         </div>
 
-
       </div>
     </div>
+
+    <footer></footer>
 
   </body>
 </html>

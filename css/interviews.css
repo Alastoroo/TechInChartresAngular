@@ -21,9 +21,21 @@ input[type=text]:focus {
   }
 .interviewContainer {
   border:2px solid #159148;
+  padding-right:0px !important;
+  padding-left:0px !important;
 }
   .interviewContainer h1 {
     text-align: inherit !important;
+    font-size: 30px;
+    text-transform: inherit;
+    font-weight: 400;
+    letter-spacing: inherit;
+  }
+  .interviewContainer p.interview_desc {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    color:#444;
   }
 #searchContainer input[type=text] {
   border:0px !important;
@@ -31,6 +43,10 @@ input[type=text]:focus {
   vertical-align: middle;
   border:0px solid transparent !important;
   font-size: 20px !important;
+}
+.arrows{
+  width:30px;
+  cursor:pointer;
 }
 .hideBloc {
   display:none;
@@ -42,4 +58,15 @@ input[type=text]:focus {
 }
   .noresult h1 {
     padding-top: 100px;
+  }
+
+.interview {
+  width:100%;
+  min-height:180px;
+  border-bottom:1px solid rgba(21,145,72,.4);
+}
+  .interview img.avatar {
+    width:128px;
+    border-radius:1000px;
+    border:5px solid rgba(21,145,72,.4);
   }
