@@ -8,7 +8,7 @@
 		          <li data-target="#hero-carousel" data-slide-to="1"></li>
 		        </ol>
 		        <div class="carousel-inner" >
-		          <div class="item" style="width: 100%; height: 300px; background: red;" ng-repeat="tab in newsStore.news" ng-class='{active:$first}'>
+		          <div class="item" style="width: 100%; height: 300px" ng-repeat="tab in newsStore.news" ng-class='{active:$first}'>
 		            <h1>{{tab.name}}</h1>
 		            <h4>{{tab.titre}}</h4>
 								<p>{{tab.text}}</p>
@@ -17,10 +17,10 @@
 
 		        </div>
 		        <a class="left carousel-control" href="#hero-carousel" data-slide="prev" style="background-image: none"></i>>
-		          <i class="fa fa-chevron-left left" style="background-image: none"></i>></i>
+		          <i class="fa fa-chevron-left left"></i>
 		        </a>
 		        <a class="right carousel-control" href="#hero-carousel" data-slide="next" style="background-image: none"></i>>
-		          <i class="fa fa-chevron-right right" style="background-image: none"></i>></i>
+		          <i class="fa fa-chevron-right right"></i>
 		        </a>
 		      </div>
 		    </div>
