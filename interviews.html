@@ -44,7 +44,14 @@
 
     <div class="container-fluid">
       <div class="container"id="searchContainer">
-        <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" /><span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/>&nbsp;&nbsp;RECHERCHER</span>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" /><span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/></span>
+          </div>
+          <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+            <div id="sortBloc">Trier par date <img src="img/arrow-down.png" /></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -65,11 +72,12 @@
                       <h1>{{interview.title}}</h1>
                     </td>
                     <td style="text-align:right;">
-                        <img src="img/arrow-up-green.png" alt="" class="arrows arrowActive"/>
+                        <img src="img/arrow-up-green.png" alt="" class="arrow"/>
                     </td>
                   </tr>
                 </table>
-                <p class="interview_desc">{{interview.description}}</p>
+                <p class="interview_desc">{{interview.description}}</p><br/>
+                <p class="interview_content" ng-bind-html="interview.content | unsafe"></p>
               </div>
             </div>
           </div>
