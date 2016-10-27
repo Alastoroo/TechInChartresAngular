@@ -1,13 +1,9 @@
-#news { 
+#news {
 	color: black;
 }
 
-p #descriptif{
-font-family: 'Raleway', sans-serif !important;
-font-weight: 500;
-font-size: 15px;
-margin-top:25px;
-margin-left: -7px;
+.descriptif{
+	font-size: 17px;
 }
 
 h1{
