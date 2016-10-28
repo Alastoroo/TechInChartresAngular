@@ -85,9 +85,27 @@
   app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT
 
-  app.controller('formController',function(){
+ app.controller('formController',function($scope, $http){
     this.contact=function(){
-      alert('');
+     
+      var name = $scope.name; 
+      var email = $scope.email; 
+      var sujet = $scope.sujet;
+      var message = $scope.message;
+
+      $http({
+        method: 'POST',
+        url: "API MATH",
+        data: "name="+name + "&email="+email + "&sujet="+sujet + "&message="+message, 
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+      }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+      });
+
     };
   });
 
