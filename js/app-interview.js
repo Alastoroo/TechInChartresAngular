@@ -120,7 +120,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
           duration: durationAnimation,
           easing: 'linear',
           complete: function() {
-            $currentInterview.css('height', '180px');
+            $currentInterview.css('height', '250px');
           },
           step: function() {}
         });
@@ -135,7 +135,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
               duration: durationAnimation,
               easing: 'linear',
               complete: function () {
-                $('.interview').css('height', '180px');
+                $('.interview').css('height', '250px');
                 $currentInterview.css('height', 'inherit');
               },
               step: function () {}
@@ -158,6 +158,21 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         step: function () {}
       });
     }
+  })
+  .on("click", "#sortBloc", function(){
+    if($(this).hasClass('desc')) {
+      $(this).attr('class', 'asc').children('img').css({
+        'transform': 'rotate(180deg)'
+      });
+      $(this).children('font').text('Les moins récents');
+    }
+    else {
+      $(this).attr('class', 'desc').children('img').css({
+        'transform': 'rotate(0deg)'
+      });
+      $(this).children('font').text('Les plus récents');
+    }
+    console.log('test')
   });
 
 })();
