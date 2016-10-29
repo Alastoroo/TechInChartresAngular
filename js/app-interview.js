@@ -15,6 +15,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
 (function() {
   var countInterview = undefined;
+  var triActuel = "desc";
 
   var app = angular.module('TechInChartres', []);
   app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
@@ -23,6 +24,14 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     $scope.data = undefined;
     $scope.aucunResultat = false;
 
+    $scope.triData = function() {
+      if(triActuel == 'desc') {
+        triActuel = 'asc';
+      }
+      else {
+        triActuel = 'desc';
+      }
+    };
     // Moteur de recherche qui prend la valeur du champ de
     // recherche et qui affiche les interviews correspondants
     $scope.searchEngine = function(index) {
@@ -163,5 +172,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     }
     console.log('test')
   });
+
 
 })();

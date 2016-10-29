@@ -104,3 +104,10 @@ input[type=text]:focus {
   margin-bottom: 10px;
   display: inline-block;
 }
+img.socialIcon {
+  width: 25px;
+  margin-top: 15px;
+}
+img.socialIcon:hover {
+  opacity:.6;
+}

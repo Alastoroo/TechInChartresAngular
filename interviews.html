@@ -51,7 +51,7 @@
             <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" /><span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/></span>
           </div>
           <div class="col-xs-12 col-sm-3 col-sm-offset-3">
-            <div id="sortBloc" class="desc"><font>Les plus récents</font> <img src="img/arrow-down.png" /></div>
+            <div id="sortBloc" class="desc" ng-click="triData()"><font>Les plus récents</font> <img src="img/arrow-down.png" /></div>
           </div>
         </div>
       </div>
@@ -67,9 +67,11 @@
               <div class="col-xs-5 col-sm-2" style="padding:14px;">
                 <center>
                   <img src="{{interview.picture}}" alt="" title="{{interview.title}}" class="avatar"/>
-                  <ul>
-                    <li ng-repeat="social in interview.socials">{{social}}</li>
-                  </ul>
+                  <span ng-repeat="(key, social) in interview.socials">
+                    <a href="{{social}}" target="_blank" ng-show="$index==0 && social.length"><img src="img/interviewsocialfb.png" class="socialIcon"/></a>
+                    <a href="{{social}}" target="_blank" ng-show="$index==1 && social.length"><img src="img/interviewsocialtw.png" class="socialIcon"/></a>
+                    <a href="{{social}}" target="_blank" ng-show="$index==2 && social.length"><img src="img/interviewsociallk.png" class="socialIcon"/></a>
+                  </span>
                 </center>
               </div>
               <div class="col-xs-7 col-sm-10" style="padding-left:30px;">
