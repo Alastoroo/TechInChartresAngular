@@ -41,18 +41,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         return true;
 
     };
-    /*
-    $scope.searchEngineData = function() {
-      // Ici cette méthode est appelée lorsque la
-      // valeur du champ de recherche est changé
-      var search_value = $scope.search_value;
 
-      if(search_value.length > 0) {
-        // Si on a quelque chose dans le champ de recherche
-        $scope.searchEngine(search_value);
-      }
-    };
-    */
     $http.get('js/interviewExample.json').success(function (data) {
       $scope.data = data;
       countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable

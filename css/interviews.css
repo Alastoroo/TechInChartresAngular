@@ -97,21 +97,10 @@ input[type=text]:focus {
   vertical-align: middle;
   margin-left:5px;
 }
-.calendar {
-  width:75px;
-  height:75px;
-  background:rgba(21,145,72,1);
-  padding:5px;
-  border-radius: 1000px;
-  margin-top: 10px;
+.interviewDate {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color:#888;
+  margin-bottom: 10px;
+  display: inline-block;
 }
-  .calendar font.calendarDay {
-    font-size:25px;
-    color:white;
-    font-family: "Oswald", sans-serif;
-  }
-  .calendar font.calendarMonth {
-    font-size:15px;
-    color:white;
-    font-family: "Oswald", sans-serif;
-  }
