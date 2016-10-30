@@ -25,11 +25,22 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     $scope.aucunResultat = false;
 
     $scope.triData = function() {
-      if(triActuel == 'desc') {
-        triActuel = 'asc';
-      }
-      else {
-        triActuel = 'desc';
+      // On permet d'activer le tri uniquement si on a pas de recherche en cours
+      if($('#search_value').val().length == 0) {
+        // Si on est en tri Desc, on passe en ASC
+        if(triActuel == 'desc') {
+          triActuel = 'asc';
+          $scope.data.interviews.sort(function(a, b) {
+            return parseFloat(a.date) - parseFloat(b.date);
+          });
+        }
+        else {
+          // Sinon on passe en tri DESC
+          triActuel = 'desc';
+          $scope.data.interviews.sort(function(a, b) {
+            return parseFloat(b.date) - parseFloat(a.date);
+          });
+        }
       }
     };
     // Moteur de recherche qui prend la valeur du champ de
@@ -52,7 +63,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     };
 
     $http.get('js/interviewExample.json').success(function (data) {
-      $scope.data = data;
+
       countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
 
       // ici on parse les Questions, en se servant de la balise [Q]
@@ -61,6 +72,19 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         questionsReponses = questionsReponses.replace( /\[Q\](.+?)\[\/Q]/gi, "<h1 class='interviewQuestion'>$1</h1>" );
         data.interviews[interview].content = questionsReponses;
       }
+      //allTimestamps.sort();
+      // allTimestamps.reverse();
+
+      // Sort ASC
+      // data.interviews.sort(function(a, b) {
+      //   return parseFloat(a.date) - parseFloat(b.date);
+      // });
+      // Sort DESC
+      data.interviews.sort(function(a, b) {
+        console.log(parseFloat(a.date) - parseFloat(b.date))
+        return parseFloat(b.date) - parseFloat(a.date);
+      });
+      $scope.data = data;
 
     });
   });
@@ -170,7 +194,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       });
       $(this).children('font').text('Les plus récents');
     }
-    console.log('test')
   });
 
 
