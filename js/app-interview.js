@@ -43,6 +43,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         }
       }
     };
+
     // Moteur de recherche qui prend la valeur du champ de
     // recherche et qui affiche les interviews correspondants
     $scope.searchEngine = function(index) {
@@ -51,14 +52,18 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       var interviewName = $scope.data.interviews[index].title;
 
       if(searchValue.length > 0) {
+        // On "désactive" la fonction tri
+        $('#sortBloc').css('opacity', '.5');
         var pattern = new RegExp(searchValue, "gi");
         if(pattern.test(interviewName))
           return true;
         else
           return false;
       }
-      else
+      else {
+        $('#sortBloc').css('opacity', '1'); // On réactive le tri
         return true;
+      }
 
     };
 
@@ -182,17 +187,20 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     }
   })
   .on("click", "#sortBloc", function(){
-    if($(this).hasClass('desc')) {
-      $(this).attr('class', 'asc').children('img').css({
-        'transform': 'rotate(180deg)'
-      });
-      $(this).children('font').text('Les moins récents');
-    }
-    else {
-      $(this).attr('class', 'desc').children('img').css({
-        'transform': 'rotate(0deg)'
-      });
-      $(this).children('font').text('Les plus récents');
+    // L'animation ne fonctionne que si on a pas effectué une recherche
+    if($('#search_value').val().length == 0) {
+      if($(this).hasClass('desc')) {
+        $(this).attr('class', 'asc').children('img').css({
+          'transform': 'rotate(180deg)'
+        });
+        $(this).children('font').text('Les moins récents');
+      }
+      else {
+        $(this).attr('class', 'desc').children('img').css({
+          'transform': 'rotate(0deg)'
+        });
+        $(this).children('font').text('Les plus récents');
+      }
     }
   });
 
