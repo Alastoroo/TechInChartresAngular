@@ -20,9 +20,31 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
   var app = angular.module('TechInChartres', []);
   app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
 
-  app.controller('mainController', function($scope, $http) {
-    $scope.data = undefined;
+  app.controller('mainController', function($scope, $http, interviewsFactory) {
+
+    // Ici on récupère nos données avec notre service, et on formate les données
+    $scope.data = interviewsFactory.get().then((data) => {
+      countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
+
+      // ici on parse les Questions, en se servant de la balise [Q]
+      for(var interview in data.interviews) {
+        var questionsReponses = data.interviews[interview].content;
+        questionsReponses = questionsReponses.replace( /\[Q\](.+?)\[\/Q]/gi, "<h1 class='interviewQuestion'>$1</h1>" );
+        data.interviews[interview].content = questionsReponses;
+      }
+      // Sort DESC
+      data.interviews.sort(function(a, b) {
+        return parseFloat(b.date) - parseFloat(a.date);
+      });
+
+      $scope.data = data;
+    });
+
+
+
     $scope.aucunResultat = false;
+
+
 
     $scope.triData = function() {
       // On permet d'activer le tri uniquement si on a pas de recherche en cours
@@ -67,31 +89,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
     };
 
-    $http.get('js/interviewExample.json').success(function (data) {
-
-      countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
-
-      // ici on parse les Questions, en se servant de la balise [Q]
-      for(var interview in data.interviews) {
-        var questionsReponses = data.interviews[interview].content;
-        questionsReponses = questionsReponses.replace( /\[Q\](.+?)\[\/Q]/gi, "<h1 class='interviewQuestion'>$1</h1>" );
-        data.interviews[interview].content = questionsReponses;
-      }
-      //allTimestamps.sort();
-      // allTimestamps.reverse();
-
-      // Sort ASC
-      // data.interviews.sort(function(a, b) {
-      //   return parseFloat(a.date) - parseFloat(b.date);
-      // });
-      // Sort DESC
-      data.interviews.sort(function(a, b) {
-        console.log(parseFloat(a.date) - parseFloat(b.date))
-        return parseFloat(b.date) - parseFloat(a.date);
-      });
-      $scope.data = data;
-
-    });
   });
 
   app.directive('footerCss', function () {return {restrict: 'EA',templateUrl: 'css/footer.css'};});
@@ -142,7 +139,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     if($('.arrowActive').length > 0) {
       // Si on clique sur l'élément qui est ouvert
       if($(this).hasClass('arrowActive')) {
-        console.log('aa');
         $(this).removeClass('arrowActive').animateRotate(0, {
           duration: durationAnimation,
           easing: 'linear',
@@ -200,6 +196,30 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
           'transform': 'rotate(0deg)'
         });
         $(this).children('font').text('Les plus récents');
+      }
+    }
+  });
+
+  // Get All interviews
+  app.factory('interviewsFactory', function($http, $q) {
+    return {
+      error: null,
+      interviews: null,
+      get() {
+        let deferred = $q.defer();
+
+        if(!this.interviews) {
+          $http.get("js/interviewExample.json").then((res) => {
+            this.interviews = res.data;
+            deferred.resolve(this.interviews);
+          }, (error) => {
+            deferred.error = error;
+          });
+        }
+        else {
+          deferred.resolve(this.interviews);
+        }
+        return deferred.promise;
       }
     }
   });
