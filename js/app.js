@@ -84,48 +84,55 @@
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
   app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT
-  app.factory ('formulaireService', function($http, $q){
+
+  app.factory('formulaireService', function($http, $q){
     return {
-      
-      post(name,email,sujet,message){
-        let deferred = $q.defer();
-        var data = $.param ({
-          nom: name, 
-          email: email, 
+      post(name,email,sujet,message) {
+        var deferred = $q.defer();
+
+        var params = $.param({
+          name: name,
+          email: email,
           topic: sujet,
           message: message
         });
-        $http.post('apimath', data, headers: {'Content-Type': 'application/x-www-form-urlencoded'}).success((res)=>{
-            alert('ff')
 
-        })
+        $http.post('APIMATHURL', params, {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }).success((res) => {
+            deferred.resolve(true);
+        });
+
+        return deferred.promise;
+      }
+    }
+  });
+  app.factory('countDownService', function($http, $q) {
+    return {
 
     }
   });
 
-  app.controller('formController',function($scope, $http , formulaireService){
-    this.contact=function(){
-       var name = $scope.name; 
-      var email = $scope.email; 
+  app.controller('formController',function($scope, $http, formulaireService){
+
+    this.contact = function() {
+
+      var name = $scope.name;
+      var email = $scope.email;
       var sujet = $scope.sujet;
       var message = $scope.message;
-      formulaireService.post(name,email,sujet,message);
-     
-     
 
-      /*$http({
+      formulaireService.post(name,email,sujet,message);
+
+
+      /*
+      $http({
         method: 'POST',
         url: "API MATH",
-        data: "name="+name + "&email="+email + "&sujet="+sujet + "&message="+message, 
+        data: "name="+name + "&email="+email + "&sujet="+sujet + "&message="+message,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      }).then(function successCallback(response) {
-    // this callback will be called asynchronously
-    // when the response is available
-      }, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-      });
-*/
+      }).then(function successCallback(response) {});*/
+
     };
   });
 
@@ -145,7 +152,7 @@
         	// Ici on utilise un Plugin jQuery, le plugin "countdown".
         	// On défini la date du compte à rebours dans la fonction countdown (La date viendra de l'API Meetup)
           $('#countDown, #countDown_navbar').countdown({
-              date: "September 29, 2017 19:00:00"
+              date: "November 24, 2016 19:00:00"
           });
 
           $('#topContent, #countDownDisplayTable').css('height', window.innerHeight-70+'px'); // Le 70 c'est pour le margin-top

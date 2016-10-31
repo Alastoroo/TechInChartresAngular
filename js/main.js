@@ -49,33 +49,41 @@ jQuery.expr.filters.offscreen = function(el) {
 $(window).on("scroll touchmove mousewheel", function(e){
 
 
-  if($('#topContent').is(':offscreen') && !$('#news').is(':offscreen')) {
+  // console.log(document.getElementById('news').getBoundingClientRect());
+  // console.log(document.getElementById('news').getBoundingClientRect().top);
+
+  if($('#topContent').is(':offscreen') && !$('#news').is(':offscreen') ) {
     $('a.topLinks').removeClass('activeLink');
-    $('a.topLinks[href=#news]').addClass('activeLink');
+    $('a.topLinks[data-id=news]').addClass('activeLink');
   }
   else if($('#news').is(':offscreen') && !$('#intervenant').is(':offscreen')) {
     $('a.topLinks').removeClass('activeLink');
-    $('a.topLinks[href=#intervenant]').addClass('activeLink');
+    $('a.topLinks[data-id=intervenant]').addClass('activeLink');
   }
   else if($('#intervenant').is(':offscreen') && !$('#equipe').is(':offscreen')) {
     $('a.topLinks').removeClass('activeLink');
-    $('a.topLinks[href=#equipe]').addClass('activeLink');
+    $('a.topLinks[data-id=equipe]').addClass('activeLink');
   }
   else if($('#equipe').is(':offscreen') && !$('#videos').is(':offscreen')) {
     $('a.topLinks').removeClass('activeLink');
-    $('a.topLinks[href=#videos]').addClass('activeLink');
+    $('a.topLinks[data-id=videos]').addClass('activeLink');
+  }
+  else if($('#videos').is(':offscreen') && !$('#presentation').is(':offscreen')) {
+    $('a.topLinks').removeClass('activeLink');
+    $('a.topLinks[data-id=presentation]').addClass('activeLink');
   }
   else {
-    if(!$('#presentation').is(':offscreen') ||
-        !$('#contact').is(':offscreen') ||
-        !$('#footer').is(':offscreen')) {
-
-          $('a.topLinks').removeClass('activeLink');
-    }
-    else {
+    // if(!$('#presentation').is(':offscreen') ||
+    //     !$('#contact').is(':offscreen') ||
+    //     !$('#footer').is(':offscreen')) {
+    //       console.log('ici salope');
+    //       $('a.topLinks').removeClass('activeLink');
+    // }
+    // else {
       $('a.topLinks').removeClass('activeLink');
-      $('a.topLinks[href=#presentation]').addClass('activeLink');
-    }
+    //   $('a.topLinks[data-id=presentation]').addClass('activeLink');
+    //   console.log('la petasse');
+    // }
   }
 
 
