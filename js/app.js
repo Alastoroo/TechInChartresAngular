@@ -84,16 +84,36 @@
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
   app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT
+  app.factory ('formulaireService', function($http, $q){
+    return {
+      
+      post(name,email,sujet,message){
+        let deferred = $q.defer();
+        var data = $.param ({
+          nom: name, 
+          email: email, 
+          topic: sujet,
+          message: message
+        });
+        $http.post('apimath', data, headers: {'Content-Type': 'application/x-www-form-urlencoded'}).success((res)=>{
+            alert('ff')
 
- app.controller('formController',function($scope, $http){
+        })
+
+    }
+  });
+
+  app.controller('formController',function($scope, $http , formulaireService){
     this.contact=function(){
-     
-      var name = $scope.name; 
+       var name = $scope.name; 
       var email = $scope.email; 
       var sujet = $scope.sujet;
       var message = $scope.message;
+      formulaireService.post(name,email,sujet,message);
+     
+     
 
-      $http({
+      /*$http({
         method: 'POST',
         url: "API MATH",
         data: "name="+name + "&email="+email + "&sujet="+sujet + "&message="+message, 
@@ -105,7 +125,7 @@
     // called asynchronously if an error occurs
     // or server returns response with an error status.
       });
-
+*/
     };
   });
 
