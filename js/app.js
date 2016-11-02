@@ -204,6 +204,7 @@
         angular.getTestability(element).whenStable(function() {
           // On utilise le service qui va chercher la date du prochain meetup
           countDownService.get().then((data) => {
+
             var nextMeetupDate = data.results[0].time;
             // Ici on passe deux DIV avec l'ID "countDown" et l'ID "countDown_navbar" a la fonction "countdown"
           	// Ici on utilise un Plugin jQuery, le plugin "countdown".
@@ -211,6 +212,19 @@
             $('#countDown, #countDown_navbar').countdown({
                 date: nextMeetupDate
             });
+
+            // Ici on met le titre de l'accueil en forme avec la date
+            var dateObj = new Date(nextMeetupDate);
+            var mois = ["janvier", "février", "mars", "avril", "mai", "juin",
+                        "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+            var dateFormat = dateObj.getDate()+" "+mois[dateObj.getMonth()];
+            $('.dateConference').html('<span class="lineTitle"></span>rendez-vous le '+dateFormat+'<span class="lineTitle"></span>');
+
+            // Ici on met le nom du prochain meetup dans la page d'accueil, titre et bloc news
+            $('.titreConference, #news h2.subTitle').html(data.results[0].name);
+
+            // Ici on met le contenu du prochain meetup.
+            $('#news p.descriptif').html(data.results[0].description.replace(/<(?:.|\n)*?>/gm, ''))
           });
 
 

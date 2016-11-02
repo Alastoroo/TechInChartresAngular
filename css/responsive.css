@@ -57,13 +57,13 @@
     text-shadow: 0px 0px 10px white;
   }
   p.stat_icones {
-    font-size: 35px
+    font-size: 35px !important;
   }
   p.stat_txt {
-    font-size: 13px;
+    font-size: 13px  !important;
   }
   p.txt3 {
-		font-size: 14px;
+		font-size: 14px !important;
 	}
   #search_value {
     width:100px;
