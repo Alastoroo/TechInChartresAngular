@@ -82,7 +82,29 @@ function redirectToMeetUp() {
       return $sce.trustAsResourceUrl(src);
     }
   });
-  app.directive('navbar', function() {
+  app.factory('countDownService', function($http, $q) {
+    return {
+      error: null,
+      nextMeetupDate: null,
+      get() {
+        let deferred = $q.defer();
+        if(!this.nextMeetupDate) {
+          // https://api.meetup.com/2/events?key=65224b6434776b43c3746545c315361&group_urlname=techn-in-chartres&sign=true
+          $http.get("js/countdownExample.json").then((res) => {
+            this.nextMeetupDate = res.data;
+            deferred.resolve(this.nextMeetupDate);
+          }, (error) => {
+            deferred.error = error;
+          });
+        }
+        else {
+          deferred.resolve(this.nextMeetupDate);
+        }
+        return deferred.promise;
+      }
+    }
+  });
+  app.directive('navbar', ['countDownService', function(countDownService) {
     return {
       restrict: 'E',
       templateUrl: 'templates/pages/navbar.html',
@@ -91,8 +113,12 @@ function redirectToMeetUp() {
           // Ici on passe deux DIV avec l'ID "countDown" et l'ID "countDown_navbar" a la fonction "countdown"
         	// Ici on utilise un Plugin jQuery, le plugin "countdown".
         	// On défini la date du compte à rebours dans la fonction countdown (La date viendra de l'API Meetup)
-          $('#countDown_navbar').countdown({
-              date: "September 29, 2017 19:00:00"
+
+          countDownService.get().then((data) => {
+            var nextMeetupDate = data.results[0].time;
+            $('#countDown_navbar').countdown({
+                date: nextMeetupDate
+            });
           });
 
           var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
@@ -142,11 +168,11 @@ function redirectToMeetUp() {
 
             }
           });
-          
+
         });
       }
     };
-  });
+  }]);
   // JS IMPORT (dans le JS on a du HTML et un appel a une fonction js)
   app.directive("countDownJs", function () {return {restrict: 'EA',templateUrl: 'js/jquery.countdown.js'};});
   // END JS IMPORT

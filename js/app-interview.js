@@ -24,7 +24,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
     // Ici on récupère nos données avec notre service, et on formate les données
     $scope.data = interviewsFactory.get().then((data) => {
-      
+
       countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
 
       // ici on parse les Questions, en se servant de la balise [Q]
@@ -40,6 +40,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
       $scope.data = data;
     });
+
 
 
 
@@ -92,18 +93,47 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
     };
 
   });
-
+  app.factory('countDownService', function($http, $q) {
+    return {
+      error: null,
+      nextMeetupDate: null,
+      get() {
+        let deferred = $q.defer();
+        if(!this.nextMeetupDate) {
+          // https://api.meetup.com/2/events?key=65224b6434776b43c3746545c315361&group_urlname=techn-in-chartres&sign=true
+          $http.get("js/countdownExample.json").then((res) => {
+            this.nextMeetupDate = res.data;
+            deferred.resolve(this.nextMeetupDate);
+          }, (error) => {
+            deferred.error = error;
+          });
+        }
+        else {
+          deferred.resolve(this.nextMeetupDate);
+        }
+        return deferred.promise;
+      }
+    }
+  });
   app.directive('footerCss', function () {return {restrict: 'EA',templateUrl: 'css/footer.css'};});
 
-  app.directive('navbar', function () {
+  app.directive('navbar', ['countDownService', function(countDownService) {
     return {
       restrict: 'EA',
       templateUrl: 'templates/pages/navbar.html',
       link: function (scope, element, attrs) {
         angular.getTestability(element).whenStable(function() {
-          $('#countDown_navbar').countdown({
-              date: "September 29, 2017 19:00:00"
+          // On utilise le service qui va chercher la date du prochain meetup
+          countDownService.get().then((data) => {
+            var nextMeetupDate = data.results[0].time;
+            // Ici on passe deux DIV avec l'ID "countDown" et l'ID "countDown_navbar" a la fonction "countdown"
+          	// Ici on utilise un Plugin jQuery, le plugin "countdown".
+          	// On défini la date du compte à rebours dans la fonction countdown (La date viendra de l'API Meetup)
+            $('#countDown_navbar').countdown({
+                date: nextMeetupDate
+            });
           });
+
           var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
 
     	    var hamburgers = document.querySelectorAll(".hamburger");
@@ -155,7 +185,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
         });
       }
     };
-  });
+  }]);
 
   app.directive('footer', function () {
     return {
