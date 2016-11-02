@@ -1,29 +1,29 @@
 .row-footer{
-	height: 100px;
+	height: 70px;
+	padding-top: 16px;
 }
-
+.row-eleves {
+	height:40px;
+}
 .footer_wcs{
-	width: 50px;
-	margin:20px;
-
-}
-
-.footer_twitter{
 	width: 30px;
 
 }
 
-.footer_facebook{
+.footer_socialIcon {
 	width: 30px;
-
+}
+.footer_socialIcon:first-child {
+	width: 30px;
+	margin-right: 5px;
 }
 
-#copyright{
-	margin:34px;
+center#copyright, #elevesCopyright{
+	font-family: "Open Sans", sans-serif !important;
 }
 
 #footer{
-	background: #fafafa;
+	background: #f6f6f6;
 }
 
 .btn-footer {

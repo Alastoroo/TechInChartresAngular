@@ -14,6 +14,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet"/>
 		<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/hamburgers.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
 
 		<style presentation-Css type="text/css"></style>
 		<style news-Css type="text/css"></style>
@@ -26,7 +28,7 @@
 		<style footer-Css type="text/css"></style>
 
 	</head>
-	
+
 	<body ng-controller="mainController as store">
 		<!--<script type="text/javascript" src="js/main.js"></script>-->
 		<script type="text/javascript" count-down-js></script>
@@ -82,6 +84,14 @@
 		<footer id="footer"></footer>
 		<!--END FOOTER-->
 
+		<div id="hamburgerMain">
+			<br/><br/>
+			<span class="hamburgerItem"><a href="/#news" ng-click="gotoElement('news');" onclick="hideHamburger();">Actualités</a></span>
+			<span class="hamburgerItem"><a href="/#intervenant" ng-click="gotoElement('intervenant');" onclick="hideHamburger();">Les intervenants</a></span>
+			<span class="hamburgerItem"><a href="/#equipe" ng-click="gotoElement('equipe');" onclick="hideHamburger();">L'équipe</a></span>
+			<span class="hamburgerItem"><a href="/#videos" ng-click="gotoElement('videos');" onclick="hideHamburger();">Vidéos</a></span>
+			<span class="hamburgerItem"><a href="/#presentation" ng-click="gotoElement('presentation');" onclick="hideHamburger();">Présentation</a></span>
+		</div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm6acMM2hL7TN_aAAbfOpU5bZ3mquoZTI&callback=initMap" async defer></script>
 	</body>
 </html>

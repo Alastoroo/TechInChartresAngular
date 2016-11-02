@@ -16,6 +16,9 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/interviews.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hamburgers.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+    
     <style type="text/css">
     #navbar {
       /*position: absolute;*/
@@ -103,6 +106,15 @@
 
       </div>
     </div>
+
+    <div id="hamburgerMain">
+			<br/><br/>
+			<span class="hamburgerItem"><a href="/#news" ng-click="gotoElement('news');" onclick="hideHamburger();">Actualités</a></span>
+			<span class="hamburgerItem"><a href="/#intervenant" ng-click="gotoElement('intervenant');" onclick="hideHamburger();">Les intervenants</a></span>
+			<span class="hamburgerItem"><a href="/#equipe" ng-click="gotoElement('equipe');" onclick="hideHamburger();">L'équipe</a></span>
+			<span class="hamburgerItem"><a href="/#videos" ng-click="gotoElement('videos');" onclick="hideHamburger();">Vidéos</a></span>
+			<span class="hamburgerItem"><a href="/#presentation" ng-click="gotoElement('presentation');" onclick="hideHamburger();">Présentation</a></span>
+		</div>
 
     <footer></footer>
 

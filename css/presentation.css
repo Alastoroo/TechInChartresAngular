@@ -12,10 +12,3 @@ p.txt3 {
 	margin-top:25px;
 	color:#555;
 }
-@media (min-width: 10px) and (max-width: 575px) {
-
-	p.txt3 {
-		font-size: 12px;
-	}
-
-}

@@ -73,17 +73,7 @@ $(window).on("scroll touchmove mousewheel", function(e){
     $('a.topLinks[data-id=presentation]').addClass('activeLink');
   }
   else {
-    // if(!$('#presentation').is(':offscreen') ||
-    //     !$('#contact').is(':offscreen') ||
-    //     !$('#footer').is(':offscreen')) {
-    //       console.log('ici salope');
-    //       $('a.topLinks').removeClass('activeLink');
-    // }
-    // else {
       $('a.topLinks').removeClass('activeLink');
-    //   $('a.topLinks[data-id=presentation]').addClass('activeLink');
-    //   console.log('la petasse');
-    // }
   }
 
 
@@ -101,9 +91,16 @@ $(window).on("scroll touchmove mousewheel", function(e){
 		//if(!$('#countDown_navbar').is(':animated')) {
     		//e.preventDefault();
     		//e.stopPropagation();
-    		$('#countDown_navbar').animate({
+    	$('#countDown_navbar').animate({
 				'right': '0px'
-			}, {duration: countDown_animation_duration, queue: false});
+			}, {duration: countDown_animation_duration, queue: false, complete: function() {
+
+        if(!$('body').hasClass('countDownActive')) {
+          $('body').addClass('countDownActive');
+        }
+
+
+      }});
 			// Du faite que le compte a rebours de la navbar vienne, on décale les boutons de la
 			// navbar, sinon ils seraient en dessous le compte a rebours (le bloc vert)
 			// On anime une marge sur le div qui contient nos boutons
@@ -125,7 +122,11 @@ $(window).on("scroll touchmove mousewheel", function(e){
     		//e.stopPropagation();
 			$('#countDown_navbar').animate({
 				'right': '-245px'
-			}, {duration: countDown_animation_duration, queue: false});
+			}, {duration: countDown_animation_duration, queue: false, complete: function() {
+        if($('body').hasClass('countDownActive')) {
+          $('body').removeClass('countDownActive');
+        }
+      }});
 
 			$('#navbar_button_container').animate({
 				'margin-right': '0px'
@@ -133,7 +134,15 @@ $(window).on("scroll touchmove mousewheel", function(e){
 		// }
 	}
 });
-
+function hideHamburger() {
+  $('.hamburger').removeClass('is-active');
+  $('#hamburgerMain').animate({
+    'opacity': '0'
+  }, 500, function() {
+    $(this).css('display', 'none');
+    $('.hamburgerItem').css('margin-top', '1000px');
+  });
+}
 $(window).resize(function() {
   $('#arrowDownAnimate').css('left', window.innerWidth/2-(parseFloat($('#arrowDownAnimate').css('width'))/2)+'px')
 });
