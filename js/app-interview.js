@@ -24,8 +24,9 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
 
     // Ici on récupère nos données avec notre service, et on formate les données
     $scope.data = interviewsFactory.get().then((data) => {
+      
       countInterview = data.interviews.length; // Ici on attribut le nombre d'interview a cette variable
-      console.log(data.interviews);
+
       // ici on parse les Questions, en se servant de la balise [Q]
       for(var interview in data.interviews) {
         var questionsReponses = data.interviews[interview].content;
@@ -76,6 +77,7 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       if(searchValue.length > 0) {
         // On "désactive" la fonction tri
         $('#sortBloc').css('opacity', '.5');
+
         var pattern = new RegExp(searchValue, "gi");
         if(pattern.test(interviewName))
           return true;
@@ -255,7 +257,6 @@ $.fn.animateRotate = function(angle, duration, easing, complete) {
       interviews: null,
       get() {
         let deferred = $q.defer();
-
         if(!this.interviews) {
           $http.get("js/interviewExample.json").then((res) => {
             this.interviews = res.data;

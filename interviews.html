@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/hamburgers.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
-    
+
     <style type="text/css">
     #navbar {
       /*position: absolute;*/
@@ -32,7 +32,7 @@
     </style>
     <style footer-Css type="text/css"></style>
   </head>
-  <body ng-controller="mainController as store">
+  <body ng-controller="mainController as store" class="countDownActive">
 
     <navbar></navbar>
 
@@ -48,12 +48,12 @@
     </div>
 
     <div class="container-fluid">
-      <div class="container"id="searchContainer">
+      <div class="container" id="searchContainer">
         <div class="row">
-          <div class="col-xs-12 col-sm-6">
+          <div class="col-xss-12 col-xs-6 col-sm-6">
             <input type="text" id="search_value" ng-model="search_value" placeholder="Mots clef" /><span id="startSearchButton"><img src="img/searchIcon.png" alt="Search" title="Rechercher"/></span>
           </div>
-          <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+          <div class="col-xss-12 col-xs-6 col-sm-3 col-sm-offset-3" >
             <div id="sortBloc" class="desc" ng-click="triData()"><font>Les plus récents</font> <img src="img/arrow-down.png" /></div>
           </div>
         </div>
@@ -69,7 +69,7 @@
             <div class="row">
               <div class="col-xs-5 col-sm-2" style="padding:14px;">
                 <center>
-                  <img src="{{interview.picture}}" alt="" title="{{interview.title}}" class="avatar"/><br/>
+                  <img src="{{interview.picture}}" alt="" title="{{interview.title}}" class="avatar img-responsive"/><br/>
                   <span ng-repeat="(key, social) in interview.socials">
                     <a href="{{social}}" target="_blank" ng-show="$index==0 && social.length"><img src="img/interviewsocialfb.png" class="socialIcon"/></a>
                     <a href="{{social}}" target="_blank" ng-show="$index==1 && social.length"><img src="img/interviewsocialtw.png" class="socialIcon"/></a>
