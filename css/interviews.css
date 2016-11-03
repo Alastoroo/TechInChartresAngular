@@ -1,7 +1,6 @@
 input[type=text]:focus {
   outline:none;
 }
-
 #searchContainer {
   padding:15px;
   background: #159148;
@@ -111,3 +110,12 @@ img.socialIcon {
 img.socialIcon:hover {
   opacity:.6;
 }
+span.interviewHashTags {
+
+  display: block;
+}
+  span.interviewHashTags font {
+    color:rgba(21,145,72,1);
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+  }

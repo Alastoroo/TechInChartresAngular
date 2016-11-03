@@ -3,6 +3,9 @@
   <head>
     <title>Tech In Chartres - Les interviews</title>
     <meta charset="UTF-8" />
+    <meta name="description" content="Tech In Chartres est le meet-up de tous les passionnés de web, de mobile, d'objets connectés, de réalité augmentée et d'innovation de manière générale." />
+    <meta name="keywords" content="tech, in, chartres, meet,up, meetup, web, mobile, réunion, loïc, Boutet"/>
+    
 		<script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-locale_fr-fr.min.js"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -24,7 +27,7 @@
       /*position: absolute;*/
     }
     #countDown_navbar {
-      right:0px;
+      right:0px !important;
     }
     #navbar_button_container {
       margin-right:245px;
@@ -83,6 +86,7 @@
                     <td>
                       <h1>{{interview.title}}</h1>
                       <span class="interviewDate">Interview réalisé le {{interview.date | date}}</span>
+                      <span class="interviewHashTags"><font ng-repeat="tag in interview.hashTags">#{{tag}} </font></span>
                     </td>
                     <td style="text-align:right;">
                         <img src="img/arrow-up-green.png" alt="" class="arrow"/>
