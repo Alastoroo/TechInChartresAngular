@@ -48,6 +48,10 @@ jQuery.expr.filters.offscreen = function(el) {
 // dans la fenêtre, le code qu'on met en dessous sera exécuté.
 $(window).on("scroll touchmove mousewheel", function(e){
 
+  if($('#topContent').is(':offscreen')) {
+    $('#boutonToTop').css('display', 'block')
+  }
+  else $('#boutonToTop').css('display', 'none');
 
   // console.log(document.getElementById('news').getBoundingClientRect());
   // console.log(document.getElementById('news').getBoundingClientRect().top);
@@ -135,6 +139,7 @@ $(window).on("scroll touchmove mousewheel", function(e){
 	}
 });
 function hideHamburger() {
+  console.log('a')
   $('.hamburger').removeClass('is-active');
   $('#hamburgerMain').animate({
     'opacity': '0'
@@ -145,4 +150,51 @@ function hideHamburger() {
 }
 $(window).resize(function() {
   $('#arrowDownAnimate').css('left', window.innerWidth/2-(parseFloat($('#arrowDownAnimate').css('width'))/2)+'px')
+
+  // Ici on regarde si dans le rare cas ou :
+  // On est en petit écran, menu hamburger ouvert, on redimensionne pour mettre
+  // plus grand, et bien le menu doit partir, ce code est là pour ça
+  if($('.hamburger').hasClass('is-active'))
+    hideHamburger();
+});
+
+
+function scrollToAnimate(elem) {
+  setTimeout(function () {
+    $el = $('#'+elem);
+
+    $('html, body').animate({
+      scrollTop: $el.offset().top-70
+    }, 500);
+
+  }, 1000);
+
+}
+$(document).ready(function() {
+
+  $('#boutonToTop').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 500);
+  });
+  // Code qui regarde si on a une ancre dans l'adresse, si c'est le cas, on descend au bloc correspondant.
+
+  // Dans le cas ou on a une ancre, utile surtout si on est sur une autre page que l'index
+  // Et que l'on clique sur les liens de la navbar, on doit etre rediriger sur l'accueil
+  // et au bloc correspondant
+  if(window.location.hash.substring(0, 2) === '#/') {
+    var bloc = window.location.hash.substring(2, window.location.hash.length);
+    switch (bloc) {
+      case 'news':          scrollToAnimate(bloc); break;
+      case 'intervenant':   scrollToAnimate(bloc); break;
+      case 'equipe':        scrollToAnimate(bloc); break;
+      case 'videos':        scrollToAnimate(bloc); break;
+      case 'presentation':  scrollToAnimate(bloc); break;
+      default:
+      break;
+
+    }
+  }
+
+  // if()
 });

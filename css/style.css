@@ -1,17 +1,8 @@
-* {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-     -khtml-user-select: none; /* Konqueror */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  not supported by any browser */
-}
 button {
   outline: none;
 }
 body {
- -webkit-font-smoothing: antialiase
+ -webkit-font-smoothing: antialiase;
 }
 button.hamburger {
   display: none;
@@ -237,6 +228,9 @@ hr {
 			color:white !important;
 			background:#159148 !important;
 			border:2px solid #159148 !important;
+      opacity: 0.80;
+
+
 		}
 	.btn-top-more {
 		margin-left:40px !important;
@@ -254,6 +248,7 @@ hr {
 		.btn-top-more:hover {
 			background:white !important;
 			border:2px solid white !important;
+      opacity: 0.80;
 		}
 	/*Compte a rebours navbar*/
 	#countDown_navbar table {
@@ -310,3 +305,20 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
   width:35px;
   border:0px;
 }
+
+#boutonToTop {
+  position: fixed;
+  display: none;
+  bottom:40px;
+  right: 40px;
+  width:50px;
+  height:50px;
+  border-radius: 1000px;
+  background: #159148;
+  text-align: center;
+  cursor: pointer;
+}
+  #boutonToTop > img {
+    width: 25px;
+    margin-top: 17px;
+  }

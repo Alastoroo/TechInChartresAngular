@@ -18,9 +18,10 @@
 	margin-right: 5px;
 }
 
-center#copyright, #elevesCopyright{
+span#copyright, #elevesCopyright{
 	font-family: "Open Sans", sans-serif !important;
 }
+
 
 #footer{
 	background: #f6f6f6;

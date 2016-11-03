@@ -115,7 +115,7 @@ span.interviewHashTags {
   display: block;
 }
   span.interviewHashTags font {
-    color:rgba(21,145,72,1);
+    color:black;
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
   }
