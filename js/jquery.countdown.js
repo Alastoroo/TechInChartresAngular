@@ -29,7 +29,7 @@ var defaultOptions = {
               "<td class='countDown_td'><span class='countDown_elem'>"+this.leadingZeros(date.min)+"</span><br/><span class='countDown_labels'>minutes</span></td>"+
               "<td class='countDown_separator'>|</td>"+
               "<td class='countDown_td'><span class='countDown_elem'>"+this.leadingZeros(date.sec)+"</span><br/><span class='countDown_labels'>secondes</span></td>"+
-              "</tr></table></div><div class='connexion'><a href='#' onclick='javascript:redirectToMeetUp();'><img src='img/connexion128_3.png' alt='' title=''/></a></div>"
+              "</tr></table></div><div class='connexion'><a href='#' title='Se connecter' onclick='javascript:redirectToMeetUp();'><img src='img/connexion128_3.png' alt='' title='Se connecter'/></a></div>"
 	}
   }
 };
